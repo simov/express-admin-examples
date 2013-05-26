@@ -20,6 +20,14 @@ $ mysql -p --user=root --default_character_set utf8 'express-admin-examples' < f
 $ mysql -p --user=root --default_character_set utf8 'express-admin-examples' < fixtures/examples/insert.sql
 ```
 
+###Rename all custom absolute paths
+In `examples/config/custom.json` there a couple of absolute paths. Change this part of all the paths
+
+```
+/home/mighty/node/modules/express-admin-examples
+```
+to point to your express-admin-examples location. Also you should have express installed globally or locally for each custom application that requires it.
+
 ##Run the Admin
 
 ```bash
