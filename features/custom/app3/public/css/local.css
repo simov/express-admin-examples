@@ -1,0 +1,3 @@
+
+#my-custom-view h4 { font-family: Helvetica; color: #cc9427; font-style: italic; }
+#my-custom-view > p:last-child { color: #4753ea; }

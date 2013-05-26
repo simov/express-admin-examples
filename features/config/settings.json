@@ -1,0 +1,1364 @@
+{
+    "notes": {
+        "slug": "notes",
+        "table": {
+            "name": "notes",
+            "pk": "id",
+            "verbose": "Notes (Editors)"
+        },
+        "columns": [
+            {
+                "verbose": "id",
+                "name": "id",
+                "control": {
+                    "text": true
+                },
+                "type": "int(11)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": false
+                }
+            },
+            {
+                "verbose": "Textarea",
+                "name": "notes1",
+                "control": {
+                    "textarea": true
+                },
+                "type": "text",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": false
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "verbose": "CKEditor Full",
+                "name": "notes2",
+                "control": {
+                    "textarea": true,
+                    "editor": "ck-full"
+                },
+                "type": "text",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": false
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "verbose": "CKEditor Compact",
+                "name": "notes3",
+                "control": {
+                    "textarea": true,
+                    "editor": "ck-compact"
+                },
+                "type": "text",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": false
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "verbose": "TinyMCE",
+                "name": "notes4",
+                "control": {
+                    "textarea": true,
+                    "editor": "tinymce"
+                },
+                "type": "text",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": false
+                },
+                "editview": {
+                    "show": true
+                }
+            }
+        ],
+        "mainview": {
+            "show": true
+        },
+        "listview": {
+            "order": {},
+            "page": 25
+        },
+        "editview": {
+            "readonly": false
+        }
+    },
+    "address": {
+        "slug": "address",
+        "table": {
+            "name": "address",
+            "pk": "id",
+            "verbose": "Address"
+        },
+        "columns": [
+            {
+                "verbose": "id",
+                "name": "id",
+                "control": {
+                    "text": true
+                },
+                "type": "int(11)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": false
+                }
+            },
+            {
+                "verbose": "user_id",
+                "name": "user_id",
+                "control": {
+                    "text": true
+                },
+                "type": "int(11)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": false
+                }
+            },
+            {
+                "verbose": "street",
+                "name": "street",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(45)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            }
+        ],
+        "mainview": {
+            "show": false
+        },
+        "listview": {
+            "order": {},
+            "page": 25
+        },
+        "editview": {
+            "readonly": false
+        }
+    },
+    "car": {
+        "slug": "car",
+        "table": {
+            "name": "car",
+            "pk": "id",
+            "verbose": "Car (Many to One)"
+        },
+        "columns": [
+            {
+                "verbose": "id",
+                "name": "id",
+                "control": {
+                    "text": true
+                },
+                "type": "int(11)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": false
+                },
+                "editview": {
+                    "show": false
+                }
+            },
+            {
+                "verbose": "model",
+                "name": "model",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(45)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            }
+        ],
+        "mainview": {
+            "show": true
+        },
+        "listview": {
+            "order": {},
+            "page": 25
+        },
+        "editview": {
+            "readonly": false,
+            "manyToOne": {
+                "repair": "car_id",
+                "driver": "car_id"
+            }
+        }
+    },
+    "driver": {
+        "slug": "driver",
+        "table": {
+            "name": "driver",
+            "pk": "id",
+            "verbose": "driver"
+        },
+        "columns": [
+            {
+                "verbose": "id",
+                "name": "id",
+                "control": {
+                    "text": true
+                },
+                "type": "int(11)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": false
+                }
+            },
+            {
+                "verbose": "car_id",
+                "name": "car_id",
+                "control": {
+                    "text": true
+                },
+                "type": "int(11)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": false
+                }
+            },
+            {
+                "verbose": "name",
+                "name": "name",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(45)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            }
+        ],
+        "mainview": {
+            "show": false
+        },
+        "listview": {
+            "order": {},
+            "page": 25
+        },
+        "editview": {
+            "readonly": false
+        }
+    },
+    "item": {
+        "slug": "item",
+        "table": {
+            "name": "item",
+            "pk": "id",
+            "verbose": "Item"
+        },
+        "columns": [
+            {
+                "verbose": "id",
+                "name": "id",
+                "control": {
+                    "text": true
+                },
+                "type": "int(11)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": false
+                },
+                "editview": {
+                    "show": false
+                }
+            },
+            {
+                "verbose": "name",
+                "name": "name",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(45)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "verbose": "description",
+                "name": "description",
+                "control": {
+                    "textarea": true
+                },
+                "type": "text",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": false
+                },
+                "editview": {
+                    "show": true
+                }
+            }
+        ],
+        "mainview": {
+            "show": true
+        },
+        "listview": {
+            "order": {},
+            "page": 25
+        },
+        "editview": {
+            "readonly": false
+        }
+    },
+    "phone": {
+        "slug": "phone",
+        "table": {
+            "name": "phone",
+            "pk": "id",
+            "verbose": "Phone"
+        },
+        "columns": [
+            {
+                "verbose": "id",
+                "name": "id",
+                "control": {
+                    "text": true
+                },
+                "type": "int(11)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": false
+                }
+            },
+            {
+                "verbose": "user_id",
+                "name": "user_id",
+                "control": {
+                    "text": true
+                },
+                "type": "int(11)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": false
+                }
+            },
+            {
+                "verbose": "mobile",
+                "name": "mobile",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(45)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            }
+        ],
+        "mainview": {
+            "show": false
+        },
+        "listview": {
+            "order": {},
+            "page": 25
+        },
+        "editview": {
+            "readonly": false
+        }
+    },
+    "purchase": {
+        "slug": "purchase",
+        "table": {
+            "name": "purchase",
+            "pk": "id",
+            "verbose": "Purchase (One to Many)"
+        },
+        "columns": [
+            {
+                "verbose": "id",
+                "name": "id",
+                "control": {
+                    "text": true
+                },
+                "type": "int(11)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": false
+                },
+                "editview": {
+                    "show": false
+                }
+            },
+            {
+                "verbose": "Item",
+                "name": "item_id",
+                "control": {
+                    "select": true
+                },
+                "type": "int(11)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                },
+                "oneToMany": {
+                    "table": "item",
+                    "pk": "id",
+                    "columns": [
+                        "name"
+                    ]
+                }
+            },
+            {
+                "verbose": "User",
+                "name": "user_id",
+                "control": {
+                    "select": true
+                },
+                "type": "int(11)",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                },
+                "oneToMany": {
+                    "table": "user",
+                    "pk": "id",
+                    "columns": [
+                        "firstname",
+                        "lastname"
+                    ]
+                }
+            },
+            {
+                "verbose": "Cache",
+                "name": "cache",
+                "control": {
+                    "text": true
+                },
+                "type": "decimal(6,2)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "verbose": "Date",
+                "name": "date",
+                "control": {
+                    "date": true
+                },
+                "type": "datetime",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            }
+        ],
+        "mainview": {
+            "show": true
+        },
+        "listview": {
+            "order": {},
+            "page": 25
+        },
+        "editview": {
+            "readonly": false
+        }
+    },
+    "recipe": {
+        "slug": "recipe",
+        "table": {
+            "name": "recipe",
+            "pk": "id",
+            "verbose": "Recipe (Many to Many)"
+        },
+        "columns": [
+            {
+                "verbose": "id",
+                "name": "id",
+                "control": {
+                    "text": true
+                },
+                "type": "int(11)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": false
+                }
+            },
+            {
+                "verbose": "Name",
+                "name": "name",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(45)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "verbose": "Recipe Types",
+                "name": "recipe_type",
+                "control": {
+                    "select": true,
+                    "multiple": true
+                },
+                "type": "int(11)",
+                "allowNull": false,
+                "editview": {
+                    "show": true
+                },
+                "manyToMany": {
+                    "link": {
+                        "table": "recipe_has_recipe_types",
+                        "parentPk": "recipe_id",
+                        "childPk": "recipe_type_id"
+                    },
+                    "ref": {
+                        "table": "recipe_type",
+                        "pk": "id",
+                        "columns": [
+                            "title"
+                        ]
+                    }
+                }
+            },
+            {
+                "verbose": "Recipe Methods",
+                "name": "recipe_method",
+                "control": {
+                    "select": true,
+                    "multiple": true
+                },
+                "type": "int(11)",
+                "allowNull": true,
+                "editview": {
+                    "show": true
+                },
+                "manyToMany": {
+                    "link": {
+                        "table": "recipe_has_recipe_methods",
+                        "parentPk": "recipe_id",
+                        "childPk": "recipe_method_id"
+                    },
+                    "ref": {
+                        "table": "recipe_method",
+                        "pk": "id",
+                        "columns": [
+                            "title"
+                        ]
+                    }
+                }
+            }
+        ],
+        "mainview": {
+            "show": true
+        },
+        "listview": {
+            "order": {},
+            "page": 25
+        },
+        "editview": {
+            "readonly": false
+        }
+    },
+    "recipe_has_recipe_methods": {
+        "slug": "recipe_has_recipe_methods",
+        "table": {
+            "name": "recipe_has_recipe_methods",
+            "pk": "recipe_id",
+            "verbose": "recipe_has_recipe_methods"
+        },
+        "columns": [
+            {
+                "verbose": "recipe_id",
+                "name": "recipe_id",
+                "control": {
+                    "text": true
+                },
+                "type": "int(11)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "verbose": "recipe_method_id",
+                "name": "recipe_method_id",
+                "control": {
+                    "text": true
+                },
+                "type": "int(11)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            }
+        ],
+        "mainview": {
+            "show": false
+        },
+        "listview": {
+            "order": {},
+            "page": 25
+        },
+        "editview": {
+            "readonly": false
+        }
+    },
+    "recipe_has_recipe_types": {
+        "slug": "recipe_has_recipe_types",
+        "table": {
+            "name": "recipe_has_recipe_types",
+            "pk": "recipe_id",
+            "verbose": "recipe_has_recipe_types"
+        },
+        "columns": [
+            {
+                "verbose": "recipe_id",
+                "name": "recipe_id",
+                "control": {
+                    "text": true
+                },
+                "type": "int(11)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "verbose": "recipe_type_id",
+                "name": "recipe_type_id",
+                "control": {
+                    "text": true
+                },
+                "type": "int(11)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            }
+        ],
+        "mainview": {
+            "show": false
+        },
+        "listview": {
+            "order": {},
+            "page": 25
+        },
+        "editview": {
+            "readonly": false
+        }
+    },
+    "recipe_method": {
+        "slug": "recipe_method",
+        "table": {
+            "name": "recipe_method",
+            "pk": "id",
+            "verbose": "Recipe Method"
+        },
+        "columns": [
+            {
+                "verbose": "id",
+                "name": "id",
+                "control": {
+                    "text": true
+                },
+                "type": "int(11)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": false
+                },
+                "editview": {
+                    "show": false
+                }
+            },
+            {
+                "verbose": "title",
+                "name": "title",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(45)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            }
+        ],
+        "mainview": {
+            "show": true
+        },
+        "listview": {
+            "order": {},
+            "page": 25
+        },
+        "editview": {
+            "readonly": false
+        }
+    },
+    "recipe_type": {
+        "slug": "recipe_type",
+        "table": {
+            "name": "recipe_type",
+            "pk": "id",
+            "verbose": "Recipe Type"
+        },
+        "columns": [
+            {
+                "verbose": "id",
+                "name": "id",
+                "control": {
+                    "text": true
+                },
+                "type": "int(11)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": false
+                },
+                "editview": {
+                    "show": false
+                }
+            },
+            {
+                "verbose": "title",
+                "name": "title",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(45)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            }
+        ],
+        "mainview": {
+            "show": true
+        },
+        "listview": {
+            "order": {},
+            "page": 25
+        },
+        "editview": {
+            "readonly": false
+        }
+    },
+    "repair": {
+        "slug": "repair",
+        "table": {
+            "name": "repair",
+            "pk": "id",
+            "verbose": "repair"
+        },
+        "columns": [
+            {
+                "verbose": "id",
+                "name": "id",
+                "control": {
+                    "text": true
+                },
+                "type": "int(11)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": false
+                }
+            },
+            {
+                "verbose": "car_id",
+                "name": "car_id",
+                "control": {
+                    "text": true
+                },
+                "type": "int(11)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": false
+                }
+            },
+            {
+                "verbose": "date",
+                "name": "date",
+                "control": {
+                    "date": true
+                },
+                "type": "date",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            }
+        ],
+        "mainview": {
+            "show": false
+        },
+        "listview": {
+            "order": {},
+            "page": 25
+        },
+        "editview": {
+            "readonly": false
+        }
+    },
+    "user": {
+        "slug": "user",
+        "table": {
+            "name": "user",
+            "pk": "id",
+            "verbose": "User (One to One)"
+        },
+        "columns": [
+            {
+                "verbose": "id",
+                "name": "id",
+                "control": {
+                    "text": true
+                },
+                "type": "int(11)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": false
+                },
+                "editview": {
+                    "show": false
+                }
+            },
+            {
+                "verbose": "firstname",
+                "name": "firstname",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(45)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "verbose": "lastname",
+                "name": "lastname",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(45)",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            }
+        ],
+        "mainview": {
+            "show": true
+        },
+        "listview": {
+            "order": {},
+            "page": 25
+        },
+        "editview": {
+            "readonly": false,
+            "oneToOne": {
+                "address": "user_id",
+                "phone": "user_id"
+            }
+        }
+    },
+    "controls": {
+        "slug": "controls",
+        "table": {
+            "name": "controls",
+            "pk": "id",
+            "verbose": "Controls"
+        },
+        "columns": [
+            {
+                "name": "id",
+                "verbose": "id",
+                "control": {
+                    "text": true
+                },
+                "type": "int(11)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": false
+                }
+            },
+            {
+                "name": "controls_list_id",
+                "verbose": "controls_list_id",
+                "control": {
+                    "text": true
+                },
+                "type": "int(11)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": false
+                }
+            },
+            {
+                "name": "controls_choice_id",
+                "verbose": "Choice",
+                "control": {
+                    "select": true
+                },
+                "type": "int(11)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                },
+                "oneToMany": {
+                    "table": "controls_choice",
+                    "pk": "id",
+                    "columns": [
+                        "name"
+                    ]
+                }
+            },
+            {
+                "verbose": "Group",
+                "name": "group",
+                "control": {
+                    "select": true,
+                    "multiple": true
+                },
+                "type": "int(11)",
+                "allowNull": false,
+                "editview": {
+                    "show": true
+                },
+                "manyToMany": {
+                    "link": {
+                        "table": "controls_has_controls_group",
+                        "parentPk": "controls_id",
+                        "childPk": "controls_group_id"
+                    },
+                    "ref": {
+                        "table": "controls_group",
+                        "pk": "id",
+                        "columns": [
+                            "name"
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "text",
+                "verbose": "Text",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(45)",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "date",
+                "verbose": "Date",
+                "control": {
+                    "date": true
+                },
+                "type": "date",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "textarea",
+                "verbose": "Editor",
+                "control": {
+                    "textarea": true,
+                    "editor": "ck-compact"
+                },
+                "type": "text",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            }
+        ],
+        "mainview": {
+            "show": false
+        },
+        "listview": {
+            "order": {},
+            "page": 25
+        },
+        "editview": {
+            "readonly": false
+        }
+    },
+    "controls_choice": {
+        "slug": "controls_choice",
+        "table": {
+            "name": "controls_choice",
+            "pk": "id",
+            "verbose": "controls_choice"
+        },
+        "columns": [
+            {
+                "name": "id",
+                "verbose": "id",
+                "control": {
+                    "text": true
+                },
+                "type": "int(11)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "name",
+                "verbose": "name",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(45)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            }
+        ],
+        "mainview": {
+            "show": false
+        },
+        "listview": {
+            "order": {},
+            "page": 25
+        },
+        "editview": {
+            "readonly": false
+        }
+    },
+    "controls_group": {
+        "slug": "controls_group",
+        "table": {
+            "name": "controls_group",
+            "pk": "id",
+            "verbose": "controls_group"
+        },
+        "columns": [
+            {
+                "name": "id",
+                "verbose": "id",
+                "control": {
+                    "text": true
+                },
+                "type": "int(11)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "name",
+                "verbose": "name",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(45)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            }
+        ],
+        "mainview": {
+            "show": false
+        },
+        "listview": {
+            "order": {},
+            "page": 25
+        },
+        "editview": {
+            "readonly": false
+        }
+    },
+    "controls_has_controls_group": {
+        "slug": "controls_has_controls_group",
+        "table": {
+            "name": "controls_has_controls_group",
+            "pk": "controls_id",
+            "verbose": "controls_has_controls_group"
+        },
+        "columns": [
+            {
+                "name": "controls_id",
+                "verbose": "controls_id",
+                "control": {
+                    "text": true
+                },
+                "type": "int(11)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "controls_group_id",
+                "verbose": "controls_group_id",
+                "control": {
+                    "text": true
+                },
+                "type": "int(11)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            }
+        ],
+        "mainview": {
+            "show": false
+        },
+        "listview": {
+            "order": {},
+            "page": 25
+        },
+        "editview": {
+            "readonly": false
+        }
+    },
+    "controls_list": {
+        "slug": "controls",
+        "table": {
+            "name": "controls_list",
+            "pk": "id",
+            "verbose": "Controls"
+        },
+        "columns": [
+            {
+                "name": "id",
+                "verbose": "id",
+                "control": {
+                    "text": true
+                },
+                "type": "int(11)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": false
+                },
+                "editview": {
+                    "show": false
+                }
+            },
+            {
+                "name": "title",
+                "verbose": "Title",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(45)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            }
+        ],
+        "mainview": {
+            "show": true
+        },
+        "listview": {
+            "order": {},
+            "page": 25
+        },
+        "editview": {
+            "readonly": false,
+            "manyToOne": {
+                "controls": "controls_list_id"
+            }
+        }
+    }
+}

@@ -1,0 +1,16 @@
+
+<link href="/css/local.css" rel="stylesheet" type="text/css" media="all">
+<script src="/js/local.js" type="text/javascript" charset="utf-8"></script>
+
+<section id="my-custom-view">
+    <h4>I'm styled through custom local stylesheet</h4>
+
+    <p>This custom view have its own custom <code>css</code> and <code>js</code> files but this time instead of adding them inside the <code>custom.json</code> file we're adding them inside the template itself.</p>
+    <p>This makes them visible only for this view, you can inspect the document and see that they're not included inside the <code>head</code> tag of the document.</p>
+    <p>Remember that you still have to define the absolute path to your public directory inside the <code>custom.json</code> file.</p>
+
+    <div class="well">
+        <p>Each of your custom files should have unique name among all included files even if they are in different directories!</p>
+        <p>Express and Nginx serve the static files on first matched basis.</p>
+    </div>
+</section>

@@ -1,0 +1,3 @@
+
+#my-custom-view h4 { font-family: 'Times New Roman'; color: #48b24b; font-style: italic; }
+#my-custom-view > p:last-child { color: #c53a3a; }

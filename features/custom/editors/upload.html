@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style type="text/css">
+        * { margin: 0; padding: 0; outline: 0; }
+        body { font-family: Arial, Helvetica, Sans-Serif; font-size: 12px; line-height: 16px; color: #000; background: #fff; }
+        h1 { font-size: 16px; line-height: 20px; text-align: center; }
+        img { display: block; margin: 0 auto; }
+    </style>
+    <script type="text/javascript" charset="utf-8">
+        window.addEventListener('load', function (e) {
+            var img = document.getElementById('path');
+            window.parent.window.onUpload(path.innerHTML);
+        }, false);
+    </script>
+</head>
+<body>
+    <h1 id="path">{{path}}</h1>
+    <img src="{{path}}" alt="" />
+    {{#error}}
+    <pre>
+        {{error}}
+    </pre>
+    {{/error}}
+</body>
+</html>

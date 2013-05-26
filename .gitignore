@@ -6,6 +6,9 @@ lib-cov
 *.out
 *.pid
 *.gz
+*.bak
+*.bac
+*.BAC
 
 pids
 logs

@@ -1,0 +1,18 @@
+
+<section id="bread-what">
+    <h2>That's more like it!</h2>
+
+    <p>A little bit of extra code inside your view's route:</p>
+
+<pre>
+res.locals.breadcrumbs = {
+    links: [
+        {url: '/', text: res.locals.string.home},
+        {active: true, text: 'Breadcrumbs'}
+    ]
+};</pre>
+
+    <p><code>res.locals.breadcrumb</code> is a variable that holds the data about admin's breadcrumbs.<br />
+    This variable is part of the admin's UI so it's rendered outside of your custom template.</p>
+
+</section>
