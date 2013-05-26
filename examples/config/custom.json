@@ -5,7 +5,7 @@
         "public": {
             "path": "/home/mighty/node/modules/express-admin-examples/examples/custom/editors",
             "js": [
-                "/jslib/ckeditor4/ckeditor.js",
+                "//cdnjs.cloudflare.com/ajax/libs/ckeditor/4.0.1/ckeditor.js",
                 "/jslib/tinymce4/js/tinymce/tinymce.min.js",
                 "/jslib/tinymce4/js/tinymce/jquery.tinymce.min.js",
                 "/editors.js"
