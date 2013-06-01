@@ -1,4 +1,6 @@
 
+SET FOREIGN_KEY_CHECKS=0;
+
 truncate table `purchase`;
 truncate table `user`;
 truncate table `property`;
@@ -88,3 +90,5 @@ insert into `purchase` set `item_id` = 1, `user_id` = 2, `cache` = 12.6, `date` 
 insert into `purchase` set `item_id` = 2, `user_id` = 1, `cache` = 40, `date` = '2012-11-18';
 insert into `purchase` set `item_id` = 3, `user_id` = 2, `cache` = 16, `date` = '2012-04-15';
 insert into `purchase` set `item_id` = 4, `user_id` = 3, `cache` = 9, `date` = '2012-11-06';
+
+SET FOREIGN_KEY_CHECKS=1;

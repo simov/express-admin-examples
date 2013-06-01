@@ -1,10 +1,7 @@
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
-SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL';
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
-DROP SCHEMA IF EXISTS `express-admin` ;
-CREATE SCHEMA IF NOT EXISTS `express-admin` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
-USE `express-admin` ;
 
 -- -----------------------------------------------------
 -- Table `item`
@@ -45,8 +42,8 @@ CREATE  TABLE IF NOT EXISTS `purchase` (
   `cache` DECIMAL(6,2) UNSIGNED NOT NULL ,
   `date` DATETIME NULL ,
   PRIMARY KEY (`id`) ,
-  INDEX `fk_purchase_user` (`user_id` ASC) ,
-  INDEX `fk_purchase_item1` (`item_id` ASC) ,
+  INDEX `fk_purchase_user_idx` (`user_id` ASC) ,
+  INDEX `fk_purchase_item1_idx` (`item_id` ASC) ,
   CONSTRAINT `fk_purchase_user`
     FOREIGN KEY (`user_id` )
     REFERENCES `user` (`id` )
@@ -84,8 +81,8 @@ CREATE  TABLE IF NOT EXISTS `type` (
   `name` VARCHAR(45) NOT NULL ,
   PRIMARY KEY (`id`) ,
   UNIQUE INDEX `name_UNIQUE` (`name` ASC) ,
-  INDEX `fk_sub_item_item1` (`item_id` ASC) ,
-  INDEX `fk_type_subtype1` (`subtype_id` ASC) ,
+  INDEX `fk_sub_item_item1_idx` (`item_id` ASC) ,
+  INDEX `fk_type_subtype1_idx` (`subtype_id` ASC) ,
   CONSTRAINT `fk_sub_item_item1`
     FOREIGN KEY (`item_id` )
     REFERENCES `item` (`id` )
@@ -110,7 +107,7 @@ CREATE  TABLE IF NOT EXISTS `property` (
   `name` VARCHAR(45) NOT NULL ,
   PRIMARY KEY (`id`) ,
   UNIQUE INDEX `name_UNIQUE` (`name` ASC) ,
-  INDEX `fk_property_item1` (`item_id` ASC) ,
+  INDEX `fk_property_item1_idx` (`item_id` ASC) ,
   CONSTRAINT `fk_property_item1`
     FOREIGN KEY (`item_id` )
     REFERENCES `item` (`id` )
@@ -161,8 +158,8 @@ CREATE  TABLE IF NOT EXISTS `recipe_ref` (
   `recipe_id` INT NOT NULL ,
   `recipe_type_id` INT NOT NULL ,
   PRIMARY KEY (`recipe_id`, `recipe_type_id`) ,
-  INDEX `fk_recipe_has_recipe_type_recipe_type1` (`recipe_type_id` ASC) ,
-  INDEX `fk_recipe_has_recipe_type_recipe1` (`recipe_id` ASC) ,
+  INDEX `fk_recipe_has_recipe_type_recipe_type1_idx` (`recipe_type_id` ASC) ,
+  INDEX `fk_recipe_has_recipe_type_recipe1_idx` (`recipe_id` ASC) ,
   CONSTRAINT `fk_recipe_has_recipe_type_recipe1`
     FOREIGN KEY (`recipe_id` )
     REFERENCES `recipe` (`id` )
@@ -185,8 +182,8 @@ CREATE  TABLE IF NOT EXISTS `recipe_ref` (
   `recipe_id` INT NOT NULL ,
   `recipe_type_id` INT NOT NULL ,
   PRIMARY KEY (`recipe_id`, `recipe_type_id`) ,
-  INDEX `fk_recipe_has_recipe_type_recipe_type1` (`recipe_type_id` ASC) ,
-  INDEX `fk_recipe_has_recipe_type_recipe1` (`recipe_id` ASC) ,
+  INDEX `fk_recipe_has_recipe_type_recipe_type1_idx` (`recipe_type_id` ASC) ,
+  INDEX `fk_recipe_has_recipe_type_recipe1_idx` (`recipe_id` ASC) ,
   CONSTRAINT `fk_recipe_has_recipe_type_recipe1`
     FOREIGN KEY (`recipe_id` )
     REFERENCES `recipe` (`id` )

@@ -1,4 +1,6 @@
 
+SET FOREIGN_KEY_CHECKS=0;
+
 -- One to Many
 truncate table `user`;
 truncate table `item`;
@@ -159,3 +161,5 @@ insert into `controls_has_controls_group` (`controls_id`,`controls_group_id`) va
 insert into `controls_has_controls_group` (`controls_id`,`controls_group_id`) values (2,3);
 insert into `controls_has_controls_group` (`controls_id`,`controls_group_id`) values (3,1);
 insert into `controls_has_controls_group` (`controls_id`,`controls_group_id`) values (3,3);
+
+SET FOREIGN_KEY_CHECKS=1;

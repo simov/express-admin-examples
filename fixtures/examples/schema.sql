@@ -1,6 +1,6 @@
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
-SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL';
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
 DROP SCHEMA IF EXISTS `express-admin-examples` ;
 CREATE SCHEMA IF NOT EXISTS `express-admin-examples` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
@@ -59,8 +59,8 @@ CREATE  TABLE IF NOT EXISTS `purchase` (
   `cache` DECIMAL(6,2) NOT NULL ,
   `date` DATETIME NULL ,
   PRIMARY KEY (`id`) ,
-  INDEX `fk_purchase_item` (`item_id` ASC) ,
-  INDEX `fk_purchase_user1` (`user_id` ASC) ,
+  INDEX `fk_purchase_item_idx` (`item_id` ASC) ,
+  INDEX `fk_purchase_user1_idx` (`user_id` ASC) ,
   CONSTRAINT `fk_purchase_item`
     FOREIGN KEY (`item_id` )
     REFERENCES `item` (`id` )
@@ -119,8 +119,8 @@ CREATE  TABLE IF NOT EXISTS `recipe_has_recipe_types` (
   `recipe_id` INT NOT NULL ,
   `recipe_type_id` INT NOT NULL ,
   PRIMARY KEY (`recipe_id`, `recipe_type_id`) ,
-  INDEX `fk_recipe_has_recipe_type_recipe_type1` (`recipe_type_id` ASC) ,
-  INDEX `fk_recipe_has_recipe_type_recipe1` (`recipe_id` ASC) ,
+  INDEX `fk_recipe_has_recipe_type_recipe_type1_idx` (`recipe_type_id` ASC) ,
+  INDEX `fk_recipe_has_recipe_type_recipe1_idx` (`recipe_id` ASC) ,
   CONSTRAINT `fk_recipe_has_recipe_type_recipe1`
     FOREIGN KEY (`recipe_id` )
     REFERENCES `recipe` (`id` )
@@ -143,8 +143,8 @@ CREATE  TABLE IF NOT EXISTS `recipe_has_recipe_methods` (
   `recipe_id` INT NOT NULL ,
   `recipe_method_id` INT NOT NULL ,
   PRIMARY KEY (`recipe_id`, `recipe_method_id`) ,
-  INDEX `fk_recipe_has_recipe_methods_recipe_method1` (`recipe_method_id` ASC) ,
-  INDEX `fk_recipe_has_recipe_methods_recipe1` (`recipe_id` ASC) ,
+  INDEX `fk_recipe_has_recipe_methods_recipe_method1_idx` (`recipe_method_id` ASC) ,
+  INDEX `fk_recipe_has_recipe_methods_recipe1_idx` (`recipe_id` ASC) ,
   CONSTRAINT `fk_recipe_has_recipe_methods_recipe1`
     FOREIGN KEY (`recipe_id` )
     REFERENCES `recipe` (`id` )
@@ -168,7 +168,7 @@ CREATE  TABLE IF NOT EXISTS `address` (
   `user_id` INT NOT NULL ,
   `street` VARCHAR(45) NOT NULL ,
   PRIMARY KEY (`id`) ,
-  INDEX `fk_address_user1` (`user_id` ASC) ,
+  INDEX `fk_address_user1_idx` (`user_id` ASC) ,
   CONSTRAINT `fk_address_user1`
     FOREIGN KEY (`user_id` )
     REFERENCES `user` (`id` )
@@ -187,7 +187,7 @@ CREATE  TABLE IF NOT EXISTS `phone` (
   `user_id` INT NOT NULL ,
   `mobile` VARCHAR(45) NOT NULL ,
   PRIMARY KEY (`id`) ,
-  INDEX `fk_phone_user1` (`user_id` ASC) ,
+  INDEX `fk_phone_user1_idx` (`user_id` ASC) ,
   CONSTRAINT `fk_phone_user1`
     FOREIGN KEY (`user_id` )
     REFERENCES `user` (`id` )
@@ -218,7 +218,7 @@ CREATE  TABLE IF NOT EXISTS `repair` (
   `car_id` INT NOT NULL ,
   `date` DATE NOT NULL ,
   PRIMARY KEY (`id`) ,
-  INDEX `fk_repair_car1` (`car_id` ASC) ,
+  INDEX `fk_repair_car1_idx` (`car_id` ASC) ,
   CONSTRAINT `fk_repair_car1`
     FOREIGN KEY (`car_id` )
     REFERENCES `car` (`id` )
@@ -237,7 +237,7 @@ CREATE  TABLE IF NOT EXISTS `driver` (
   `car_id` INT NOT NULL ,
   `name` VARCHAR(45) NOT NULL ,
   PRIMARY KEY (`id`) ,
-  INDEX `fk_driver_car1` (`car_id` ASC) ,
+  INDEX `fk_driver_car1_idx` (`car_id` ASC) ,
   CONSTRAINT `fk_driver_car1`
     FOREIGN KEY (`car_id` )
     REFERENCES `car` (`id` )
@@ -283,8 +283,8 @@ CREATE  TABLE IF NOT EXISTS `controls` (
   `date` DATE NULL ,
   `textarea` TEXT NULL ,
   PRIMARY KEY (`id`) ,
-  INDEX `fk_controls_controls_choice1` (`controls_choice_id` ASC) ,
-  INDEX `fk_controls_controls_list1` (`controls_list_id` ASC) ,
+  INDEX `fk_controls_controls_choice1_idx` (`controls_choice_id` ASC) ,
+  INDEX `fk_controls_controls_list1_idx` (`controls_list_id` ASC) ,
   CONSTRAINT `fk_controls_controls_choice1`
     FOREIGN KEY (`controls_choice_id` )
     REFERENCES `controls_choice` (`id` )
@@ -319,8 +319,8 @@ CREATE  TABLE IF NOT EXISTS `controls_has_controls_group` (
   `controls_id` INT NOT NULL ,
   `controls_group_id` INT NOT NULL ,
   PRIMARY KEY (`controls_id`, `controls_group_id`) ,
-  INDEX `fk_controls_has_controls_group_controls_group1` (`controls_group_id` ASC) ,
-  INDEX `fk_controls_has_controls_group_controls1` (`controls_id` ASC) ,
+  INDEX `fk_controls_has_controls_group_controls_group1_idx` (`controls_group_id` ASC) ,
+  INDEX `fk_controls_has_controls_group_controls1_idx` (`controls_id` ASC) ,
   CONSTRAINT `fk_controls_has_controls_group_controls1`
     FOREIGN KEY (`controls_id` )
     REFERENCES `controls` (`id` )
@@ -333,6 +333,7 @@ CREATE  TABLE IF NOT EXISTS `controls_has_controls_group` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+USE `express-admin-examples` ;
 
 
 SET SQL_MODE=@OLD_SQL_MODE;

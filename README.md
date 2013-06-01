@@ -37,7 +37,7 @@ $ admin examples/config/
 ##Enjoy
 
 Navigate to `http://localhost:3000`
-user: admin, pass: admin
+user: admin, pass: 11aaAA
 
 ##Other examples
 

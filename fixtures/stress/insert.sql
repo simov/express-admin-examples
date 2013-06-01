@@ -1,4 +1,6 @@
 
+SET FOREIGN_KEY_CHECKS=0;
+
 truncate table `inline_one1_has_inline_one1_group1`;
 truncate table `inline_one1_has_inline_one1_group2`;
 truncate table `inline_one1`;
@@ -232,3 +234,5 @@ insert into `inline_many2_has_inline_many2_group2` (inline_many2_id, inline_many
 insert into `inline_many2_has_inline_many2_group2` (inline_many2_id, inline_many2_group2_id) VALUES (3,1);
 insert into `inline_many2_has_inline_many2_group2` (inline_many2_id, inline_many2_group2_id) VALUES (4,1);
 insert into `inline_many2_has_inline_many2_group2` (inline_many2_id, inline_many2_group2_id) VALUES (4,2);
+
+SET FOREIGN_KEY_CHECKS=1;

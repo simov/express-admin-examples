@@ -1,6 +1,6 @@
 {
     "database": {
-        "name": "express-admin-stress-test",
+        "name": "express-admin-stress",
         "user": "liolio",
         "pass": "karamba"
     },

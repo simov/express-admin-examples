@@ -1,15 +1,11 @@
 {
     "database": {
-        "name": "express-admin-test",
+        "name": "express-admin-simple",
         "user": "liolio",
         "pass": "karamba"
     },
     "server": {
         "port": 3000
-    },
-    "admin": {
-        "name": "admin",
-        "pass": "123456"
     },
     "app": {
         "layouts": true,
