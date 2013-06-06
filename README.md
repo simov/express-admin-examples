@@ -3,7 +3,9 @@
 
 This is the examples repository for [Express Admin][1]
 
-[Documentation][2]
+Other locations:
+- [Introductory Screencast][3]
+- [Documentation][2]
 
 ##Preparations
 
@@ -46,3 +48,4 @@ Apply the above steps for any other example in this repository. Just change the 
 
   [1]: https://github.com/simov/express-admin
   [2]: https://simov.github.com/express-admin-site
+  [3]: http://www.youtube.com/watch?v=1CdoCB96QNk
