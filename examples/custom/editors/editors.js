@@ -29,7 +29,7 @@ $(function () {
         });
     }
 
-    if (typeof tinyMCE !== 'undefined')
+    if (typeof tinyMCE !== 'undefined') {
         // it's important to initialize only the visible textareas
         $('tr:not(.blank) .tinymce').tinymce({});
     }
@@ -78,7 +78,7 @@ function onAddInline (rows) {
         });
     }
 
-    if (typeof tinyMCE !== 'undefined')
+    if (typeof tinyMCE !== 'undefined') {
         // init tinymce editors
         $('.tinymce', rows).tinymce({});
     }
