@@ -28,9 +28,9 @@ In `examples/config/custom.json` there a couple of absolute paths. Change this p
 ```
 /home/mighty/node/modules/express-admin-examples
 ```
-to point to your `express-admin-examples` location. Also you should have express installed globally or locally for each custom application that requires it.
+to point to your `express-admin-examples` location.
 
-##Install Custom View's Dependencies
+###Install Custom View's Dependencies
 ```bash
 $ npm install
 ```
