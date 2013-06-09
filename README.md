@@ -30,6 +30,11 @@ In `examples/config/custom.json` there a couple of absolute paths. Change this p
 ```
 to point to your `express-admin-examples` location. Also you should have express installed globally or locally for each custom application that requires it.
 
+##Install Custom View's Dependencies
+```bash
+$ npm install
+```
+
 ##Run the Admin
 
 ```bash

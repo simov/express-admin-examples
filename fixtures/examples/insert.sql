@@ -16,21 +16,30 @@ insert into `item` set `name` = 'energy', `description` = '';
 insert into `item` set `name` = 'cherries', `description` = '';
 insert into `item` set `name` = 'chocolate', `description` = '';
 
-insert into `purchase` set `item_id` = 1, `user_id` = 3, `cache` = 17.5, `date` = '2012-01-27';
-insert into `purchase` set `item_id` = 3, `user_id` = 2, `cache` = 18.99, `date` = '2012-05-23';
-insert into `purchase` set `item_id` = 5, `user_id` = 1, `cache` = 5.4, `date` = '2012-07-06';
-insert into `purchase` set `item_id` = 4, `user_id` = 2, `cache` = 20, `date` = '2012-03-09';
-insert into `purchase` set `item_id` = 2, `user_id` = 3, `cache` = 50, `date` = '2012-12-29';
-insert into `purchase` set `item_id` = 1, `user_id` = 1, `cache` = 18, `date` = '2012-11-16';
-insert into `purchase` set `item_id` = 3, `user_id` = 2, `cache` = 9, `date` = '2012-09-18';
-insert into `purchase` set `item_id` = 4, `user_id` = 3, `cache` = 3.5, `date` = '2012-08-03';
-insert into `purchase` set `item_id` = 5, `user_id` = 1, `cache` = 19, `date` = '2012-10-09';
-insert into `purchase` set `item_id` = 4, `user_id` = 2, `cache` = 2, `date` = '2012-05-13';
-insert into `purchase` set `item_id` = 3, `user_id` = 3, `cache` = 1, `date` = '2012-09-21';
-insert into `purchase` set `item_id` = 1, `user_id` = 2, `cache` = 12.6, `date` = '2012-12-26';
-insert into `purchase` set `item_id` = 2, `user_id` = 1, `cache` = 40, `date` = '2012-11-18';
-insert into `purchase` set `item_id` = 3, `user_id` = 2, `cache` = 16, `date` = '2012-04-15';
-insert into `purchase` set `item_id` = 4, `user_id` = 3, `cache` = 9, `date` = '2012-11-06';
+insert into `purchase` set `item_id` = 1, `user_id` = 3, `cache` = 17.5, `date` = '2012-01-01';
+insert into `purchase` set `item_id` = 2, `user_id` = 1, `cache` = 37.5, `date` = '2012-01-12';
+insert into `purchase` set `item_id` = 1, `user_id` = 2, `cache` = 66.0, `date` = '2012-01-15';
+insert into `purchase` set `item_id` = 4, `user_id` = 3, `cache` = 15.0, `date` = '2012-01-27';
+insert into `purchase` set `item_id` = 1, `user_id` = 2, `cache` = 18.9, `date` = '2012-02-07';
+insert into `purchase` set `item_id` = 2, `user_id` = 1, `cache` = 100,  `date` = '2012-02-19';
+insert into `purchase` set `item_id` = 4, `user_id` = 3, `cache` = 20.0, `date` = '2012-02-20';
+insert into `purchase` set `item_id` = 2, `user_id` = 3, `cache` = 50.0, `date` = '2012-03-08';
+insert into `purchase` set `item_id` = 3, `user_id` = 1, `cache` = 18.0, `date` = '2012-03-16';
+insert into `purchase` set `item_id` = 5, `user_id` = 2, `cache` = 9.00, `date` = '2012-03-18';
+insert into `purchase` set `item_id` = 2, `user_id` = 3, `cache` = 3.50, `date` = '2012-03-29';
+insert into `purchase` set `item_id` = 5, `user_id` = 1, `cache` = 19.0, `date` = '2012-04-09';
+insert into `purchase` set `item_id` = 4, `user_id` = 2, `cache` = 22.7, `date` = '2012-04-13';
+insert into `purchase` set `item_id` = 3, `user_id` = 3, `cache` = 44.5, `date` = '2012-04-21';
+insert into `purchase` set `item_id` = 1, `user_id` = 2, `cache` = 12.6, `date` = '2012-04-26';
+insert into `purchase` set `item_id` = 2, `user_id` = 2, `cache` = 16.0, `date` = '2012-04-26';
+insert into `purchase` set `item_id` = 2, `user_id` = 1, `cache` = 40.0, `date` = '2012-05-06';
+insert into `purchase` set `item_id` = 3, `user_id` = 2, `cache` = 16.8, `date` = '2012-05-15';
+insert into `purchase` set `item_id` = 4, `user_id` = 3, `cache` = 9.0,  `date` = '2012-05-22';
+insert into `purchase` set `item_id` = 2, `user_id` = 1, `cache` = 40.0, `date` = '2012-06-06';
+insert into `purchase` set `item_id` = 3, `user_id` = 2, `cache` = 16.0, `date` = '2012-06-15';
+insert into `purchase` set `item_id` = 5, `user_id` = 3, `cache` = 19.0, `date` = '2012-06-22';
+insert into `purchase` set `item_id` = 3, `user_id` = 3, `cache` = 40.0, `date` = '2012-06-24';
+insert into `purchase` set `item_id` = 1, `user_id` = 3, `cache` = 70.0, `date` = '2012-06-27';
 
 
 -- Many to Many

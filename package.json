@@ -1,0 +1,19 @@
+{
+    "name": "express-admin-examples",
+    "version": "1.0.0",
+    "description": "Examples for Express Admin.",
+    "license"   : "MIT",
+    "homepage"  : "https://github.com/simov/express-admin-examples",
+    "author": {
+        "name"  : "simo",
+        "email" : "simeonvelichkov@gmail.com"
+    },
+    "repository": {
+        "type"  : "git",
+        "url"   : "git://github.com/simov/express-admin-examples.git"
+    },
+    "dependencies": {
+        "express"    : "3.0.0rc2",
+        "moment"     : "*"
+    }
+}

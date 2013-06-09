@@ -55,5 +55,13 @@
         "mainview": {
             "show": true
         }
+    },
+    "stats": {
+        "path"  : "/home/mighty/node/modules/express-admin-examples/examples/custom/highcharts/app",
+        "slug": "stats",
+        "verbose": "Highcharts Statistics",
+        "mainview": {
+            "show": true
+        }
     }
 }

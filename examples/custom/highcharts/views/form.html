@@ -1,0 +1,67 @@
+
+<style type="text/css">
+    .form-horizontal.well .control-group { margin: 0; }
+    #readme { float: none; margin: 0 auto; }
+</style>
+
+<!-- this library is loaded locally only for this view -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/highcharts/3.0.2/highcharts.js" type="text/javascript" charset="utf-8"></script>
+
+<script type="text/javascript" charset="utf-8">
+    $(function () {
+        $('[name=month]').on('change', function (e) {
+            $('form')
+                .attr('action', '/stats/'+$(this).val())
+                .trigger('submit');
+        });
+    });
+</script>
+
+<!-- Le View -->
+<h2>Statistics</h2>
+
+<form action="/stats" method="post" accept-charset="utf-8" class="form-horizontal well">
+    <fieldset class="control-group">
+        <label class="control-label">Month</label>
+        <div class="controls">
+            <select name="month" class="span2">
+                {{#months}}
+                <!-- this is one way to have selected element in mustache -->
+                <option value="{{value}}" {{#selected}}selected="selected"{{/selected}}>	{{text}}
+                </option>
+                {{/months}}
+            </select>
+        </div>
+        <!-- if you're going to post data this line is required! -->
+        <input type="hidden" name="_csrf" value="{{csrf}}" />
+    </fieldset>
+</form>
+
+<section id="chart">
+    <script type="text/javascript" charset="utf-8">
+        $(function () {
+            // {{{chart data is unescaped}}}
+            var settings = JSON.parse('{{{chart}}}');
+
+            // can't have functions in json
+            settings.tooltip.formatter = function () {
+                return '<strong>'+this.point.name+'</strong>: $'
+                        +this.point.options.total;
+            };
+            // so the callbacks are here
+            settings.plotOptions.pie.dataLabels.formatter = function () {
+                return '<strong>'+this.point.name+'</strong>: '
+                        +parseFloat(this.percentage.toFixed(2))+'%';
+            }
+
+            // create the chart
+            var pieChart = new Highcharts.Chart(settings);
+        });
+    </script>
+    <div id="chart-pie">
+        <!-- the chart will be rendered here -->
+    </div>
+</section>
+
+<!-- you can have as many partials as you want -->
+{{>readme}}
