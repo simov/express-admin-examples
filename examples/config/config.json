@@ -1,8 +1,8 @@
 {
-    "database": {
-        "name": "express-admin-examples",
+    "mysql": {
+        "database": "express-admin-examples",
         "user": "liolio",
-        "pass": "karamba"
+        "password": "karamba"
     },
     "server": {
         "port": 3000
