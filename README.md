@@ -4,53 +4,39 @@
 This is the examples repository for [Express Admin][1]
 
 Other locations:
-- [Introductory Screencast][3]
-- [Documentation][2]
+- [Introductory Screencast][2]
+- [Documentation][3]
 
-##Preparations
+##Install
+```bash
+$ git clone https://github.com/simov/express-admin-examples
+$ cd express-admin-examples
+$ npm install
+```
 
-###Create the schema and the test user
+##Create the schema and the test user
 ```sql
 CREATE SCHEMA `express-admin-examples` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
 CREATE USER liolio@localhost IDENTIFIED BY 'karamba' ;
 GRANT ALL ON `express-admin-examples`.* TO liolio@localhost ;
 ```
 
-###Import the schema and some test data
+##Import the schema and the test data
 ```bash
-$ mysql -p --user=root --default_character_set utf8 'express-admin-examples' < fixtures/examples/schema.sql
-$ mysql -p --user=root --default_character_set utf8 'express-admin-examples' < fixtures/examples/insert.sql
-```
-
-###Rename all custom absolute paths
-In `examples/config/custom.json` there a couple of absolute paths. Change this part of all the paths
-
-```
-/home/mighty/node/modules/express-admin-examples
-```
-to point to your `express-admin-examples` location.
-
-###Install Custom View's Dependencies
-```bash
-$ npm install
+$ mysql -p --user=root 'express-admin-examples' < fixtures/examples/schema.sql
+$ mysql -p --user=root 'express-admin-examples' < fixtures/examples/insert.sql
 ```
 
 ##Run the Admin
-
 ```bash
 $ admin examples/config/
 ```
 
-##Enjoy
-
-Navigate to `http://localhost:3000`
-user: admin, pass: 11aaAA
-
-##Other examples
-
-Apply the above steps for any other example in this repository. Just change the schema name and the file paths. The test user is created only once and the permissions are granted once for each schema.
+##Navigate to `http://localhost:3000`
+Username: **admin**
+Password: **11aaAA**
 
 
   [1]: https://github.com/simov/express-admin
-  [2]: https://simov.github.com/express-admin-site
-  [3]: http://www.youtube.com/watch?v=1CdoCB96QNk
+  [2]: http://www.youtube.com/watch?v=1CdoCB96QNk
+  [3]: https://simov.github.io/express-admin-site
