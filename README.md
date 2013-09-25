@@ -39,4 +39,4 @@ Password: **11aaAA**
 
   [1]: https://github.com/simov/express-admin
   [2]: http://www.youtube.com/watch?v=1CdoCB96QNk
-  [3]: https://simov.github.io/express-admin-site
+  [3]: http://simov.github.io/express-admin-site
