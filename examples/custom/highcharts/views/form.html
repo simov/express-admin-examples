@@ -21,10 +21,10 @@
 <h2>Statistics</h2>
 
 <form action="/stats" method="post" accept-charset="utf-8" class="form-horizontal well">
-    <fieldset class="control-group">
-        <label class="control-label">Month</label>
-        <div class="controls">
-            <select name="month" class="span2">
+    <fieldset class="form-group">
+        <label class="control-label col-lg-1 col-md-1 col-sm-1">Month</label>
+        <div class="col-lg-2 col-md-2 col-sm-3">
+            <select name="month" class="form-control">
                 {{#months}}
                 <!-- this is one way to have selected element in mustache -->
                 <option value="{{value}}" {{#selected}}selected="selected"{{/selected}}>	{{text}}
