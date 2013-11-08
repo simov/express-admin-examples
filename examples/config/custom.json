@@ -1,29 +1,44 @@
 {
     "editors": {
-        "path": "/home/mighty/node/modules/express-admin-examples/examples/custom/editors/app",
-        "slug": "upload",
+        "app": {
+            "path": "/home/mighty/node/modules/express-admin-examples/examples/custom/editors/app",
+            "slug": "upload"
+        },
         "public": {
-            "path": "/home/mighty/node/modules/express-admin-examples/examples/custom/editors",
-            "js": [
-                "//cdnjs.cloudflare.com/ajax/libs/ckeditor/4.0.1/ckeditor.js",
-                "/jslib/tinymce/js/tinymce/tinymce.min.js",
-                "/jslib/tinymce/js/tinymce/jquery.tinymce.min.js",
-                "/editors.js"
-            ]
+            "external": {
+                "js": [
+                    "//cdnjs.cloudflare.com/ajax/libs/ckeditor/4.2/ckeditor.js"
+                ]
+            },
+            "local": {
+                "path": "/home/mighty/node/modules/express-admin-examples/examples/custom/editors",
+                "js": [
+                    "/jslib/tinymce/js/tinymce/tinymce.min.js",
+                    "/jslib/tinymce/js/tinymce/jquery.tinymce.min.js",
+                    "/editors.js"
+                ]
+            }
         }
     },
     "view1": {
-        "path": "/home/mighty/node/modules/express-admin-examples/examples/custom/app1/app",
-        "slug": "view1",
-        "verbose": "Simple",
-        "mainview": {
-            "show": true
+        "app": {
+            "path": "/home/mighty/node/modules/express-admin-examples/examples/custom/app1/app",
+            "slug": "view1",
+            "verbose": "Simple",
+            "mainview": {
+                "show": true
+            }
         }
     },
     "view2": {
-        "path"  : "/home/mighty/node/modules/express-admin-examples/examples/custom/app2/app",
-        "slug": "view2",
-        "verbose": "Custom global static files",
+        "app": {
+            "path"  : "/home/mighty/node/modules/express-admin-examples/examples/custom/app2/app",
+            "slug": "view2",
+            "verbose": "Custom global static files",
+            "mainview": {
+                "show": true
+            }
+        },
         "public": {
             "path": "/home/mighty/node/modules/express-admin-examples/examples/custom/app2/public",
             "css": [
@@ -32,36 +47,39 @@
             "js": [
                 "/js/global.js"
             ]
-        },
-        "mainview": {
-            "show": true
         }
     },
     "view3": {
-        "path"  : "/home/mighty/node/modules/express-admin-examples/examples/custom/app3/app",
-        "slug": "view3",
-        "verbose": "Custom local static files",
+        "app": {
+            "path"  : "/home/mighty/node/modules/express-admin-examples/examples/custom/app3/app",
+            "slug": "view3",
+            "verbose": "Custom local static files",
+            "mainview": {
+                "show": true
+            }
+        },
         "public": {
             "path": "/home/mighty/node/modules/express-admin-examples/examples/custom/app3/public"
-        },
-        "mainview": {
-            "show": true
         }
     },
     "view4": {
-        "path"  : "/home/mighty/node/modules/express-admin-examples/examples/custom/app4/app",
-        "slug": "view4",
-        "verbose": "Breadcrumbs",
-        "mainview": {
-            "show": true
+        "app": {
+            "path"  : "/home/mighty/node/modules/express-admin-examples/examples/custom/app4/app",
+            "slug": "view4",
+            "verbose": "Breadcrumbs",
+            "mainview": {
+                "show": true
+            }
         }
     },
     "stats": {
-        "path"  : "/home/mighty/node/modules/express-admin-examples/examples/custom/highcharts/app",
-        "slug": "stats",
-        "verbose": "Highcharts Statistics",
-        "mainview": {
-            "show": true
+        "app": {
+            "path"  : "/home/mighty/node/modules/express-admin-examples/examples/custom/highcharts/app",
+            "slug": "stats",
+            "verbose": "Highcharts Statistics",
+            "mainview": {
+                "show": true
+            }
         }
     }
 }

@@ -13,7 +13,7 @@
         "url"   : "git://github.com/simov/express-admin-examples.git"
     },
     "dependencies": {
-        "express"    : "3.0.0rc2",
+        "express"    : "3.4.4",
         "moment"     : "*"
     },
     "scripts": {
