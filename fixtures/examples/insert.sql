@@ -143,32 +143,79 @@ insert into `driver` set `car_id` = 3, `name` = 'David';
 insert into `driver` set `car_id` = 3, `name` = 'Rossie';
 
 -- Controls
-truncate table `controls_list`;
-truncate table `controls_has_controls_group`;
+truncate table `controls_mtm_single`;
+truncate table `controls_mtm_multiple`;
+truncate table `controls_has_controls_mtm_single`;
+truncate table `controls_has_controls_mtm_multiple`;
 truncate table `controls`;
-truncate table `controls_choice`;
-truncate table `controls_group`;
+truncate table `controls_otm_single`;
+truncate table `controls_otm_multiple`;
+truncate table `controls_inline_otm_single`;
+truncate table `controls_inline_otm_multiple`;
+-- otm
+insert into `controls_otm_single` (`name`) values ('one');
+insert into `controls_otm_single` (`name`) values ('two');
+insert into `controls_otm_single` (`name`) values ('three');
 
-insert into `controls_choice` set `name` = 'choice1';
-insert into `controls_choice` set `name` = 'choice2';
-insert into `controls_choice` set `name` = 'choice3';
+insert into `controls_otm_multiple` (`first`,`last`) values ('one','two');
+insert into `controls_otm_multiple` (`first`) values ('three');
+insert into `controls_otm_multiple` (`first`,`last`) values ('four','five');
 
-insert into `controls_group` set `name` = 'group1';
-insert into `controls_group` set `name` = 'group2';
-insert into `controls_group` set `name` = 'group3';
+insert into `controls_inline_otm_single` (`name`) values ('one');
+insert into `controls_inline_otm_single` (`name`) values ('two');
+insert into `controls_inline_otm_single` (`name`) values ('three');
 
-insert into `controls_list` set `title` = 'title1';
-insert into `controls_list` set `title` = 'title2';
-insert into `controls_list` set `title` = 'title3';
+insert into `controls_inline_otm_multiple` (`first`,`last`) values ('one','two');
+insert into `controls_inline_otm_multiple` (`first`) values ('three');
+insert into `controls_inline_otm_multiple` (`first`,`last`) values ('four','five');
+-- mtm
+insert into `controls_mtm_single` (`name`) values ('one');
+insert into `controls_mtm_single` (`name`) values ('two');
+insert into `controls_mtm_single` (`name`) values ('three');
 
-insert into `controls` (`controls_list_id`,`controls_choice_id`) values (1,2);
-insert into `controls` (`controls_list_id`,`controls_choice_id`) values (2,1);
-insert into `controls` (`controls_list_id`,`controls_choice_id`) values (3,3);
+insert into `controls_mtm_multiple` (`first`,`last`) values ('one','two');
+insert into `controls_mtm_multiple` (`first`) values ('three');
+insert into `controls_mtm_multiple` (`first`,`last`) values ('four','five');
 
-insert into `controls_has_controls_group` (`controls_id`,`controls_group_id`) values (1,2);
-insert into `controls_has_controls_group` (`controls_id`,`controls_group_id`) values (1,3);
-insert into `controls_has_controls_group` (`controls_id`,`controls_group_id`) values (2,3);
-insert into `controls_has_controls_group` (`controls_id`,`controls_group_id`) values (3,1);
-insert into `controls_has_controls_group` (`controls_id`,`controls_group_id`) values (3,3);
+insert into `controls_inline_mtm_single` (`name`) values ('one');
+insert into `controls_inline_mtm_single` (`name`) values ('two');
+insert into `controls_inline_mtm_single` (`name`) values ('three');
+
+insert into `controls_inline_mtm_multiple` (`first`,`last`) values ('one','two');
+insert into `controls_inline_mtm_multiple` (`first`) values ('three');
+insert into `controls_inline_mtm_multiple` (`first`,`last`) values ('four','five');
+-- controls
+insert into `controls`
+	(`controls_otm_single_id`,`controls_otm_multiple_id`,`text`,`boolean`,`upload`,`date`,`time`,`datetime`,`year`,`textarea`)
+	values (1,1,'text',1,'file','2013-12-10','20:36','2014-12-10 7:50','2015','text');
+insert into `controls`
+	(`text`)
+	values ('all other empty');
+-- controls inline
+insert into `controls_inline`
+	(`controls_id`,`controls_inline_otm_single_id`,`controls_inline_otm_multiple_id`,`text`,`boolean`,`upload`,`date`,`time`,`datetime`,`year`,`textarea`)
+	values (1,2,2,'text',1,'file','2013-12-10','20:36','2014-12-10 7:50','2015','text');
+insert into `controls_inline`
+	(`controls_id`,`controls_inline_otm_single_id`,`controls_inline_otm_multiple_id`,`text`,`boolean`,`upload`,`date`,`time`,`datetime`,`year`,`textarea`)
+	values (2,3,3,'text',0,'file','2013-12-10','20:36','2014-12-10 7:50','2015','text');
+-- link
+insert into `controls_has_controls_mtm_single` (`controls_id`,`controls_mtm_single_id`) values (1,1);
+insert into `controls_has_controls_mtm_multiple` (`controls_id`,`controls_mtm_multiple_id`) values (1,1);
+insert into `controls_has_controls_mtm_multiple` (`controls_id`,`controls_mtm_multiple_id`) values (1,2);
+insert into `controls_has_controls_mtm_multiple` (`controls_id`,`controls_mtm_multiple_id`) values (1,3);
+insert into `controls_has_controls_mtm_single` (`controls_id`,`controls_mtm_single_id`) values (2,1);
+insert into `controls_has_controls_mtm_multiple` (`controls_id`,`controls_mtm_multiple_id`) values (2,1);
+insert into `controls_has_controls_mtm_multiple` (`controls_id`,`controls_mtm_multiple_id`) values (2,2);
+insert into `controls_has_controls_mtm_multiple` (`controls_id`,`controls_mtm_multiple_id`) values (2,3);
+-- link inline
+insert into `controls_inline_has_controls_inline_mtm_single` (`controls_inline_id`,`controls_inline_mtm_single_id`) values (1,1);
+insert into `controls_inline_has_controls_inline_mtm_multiple` (`controls_inline_id`,`controls_inline_mtm_multiple_id`) values (1,1);
+insert into `controls_inline_has_controls_inline_mtm_multiple` (`controls_inline_id`,`controls_inline_mtm_multiple_id`) values (1,2);
+insert into `controls_inline_has_controls_inline_mtm_multiple` (`controls_inline_id`,`controls_inline_mtm_multiple_id`) values (1,3);
+insert into `controls_inline_has_controls_inline_mtm_single` (`controls_inline_id`,`controls_inline_mtm_single_id`) values (2,1);
+insert into `controls_inline_has_controls_inline_mtm_multiple` (`controls_inline_id`,`controls_inline_mtm_multiple_id`) values (2,1);
+insert into `controls_inline_has_controls_inline_mtm_multiple` (`controls_inline_id`,`controls_inline_mtm_multiple_id`) values (2,2);
+insert into `controls_inline_has_controls_inline_mtm_multiple` (`controls_inline_id`,`controls_inline_mtm_multiple_id`) values (2,3);
+-- END Controls
 
 SET FOREIGN_KEY_CHECKS=1;
