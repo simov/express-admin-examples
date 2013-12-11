@@ -1048,7 +1048,11 @@
                 "name": "boolean",
                 "verbose": "boolean",
                 "control": {
-                    "text": true
+                    "radio": true,
+                    "options": [
+                        "No",
+                        "Yes"
+                    ]
                 },
                 "type": "tinyint(1)",
                 "allowNull": true,
@@ -1443,7 +1447,11 @@
                 "name": "boolean",
                 "verbose": "boolean",
                 "control": {
-                    "text": true
+                    "radio": true,
+                    "options": [
+                        "No",
+                        "Yes"
+                    ]
                 },
                 "type": "tinyint(1)",
                 "allowNull": false,
