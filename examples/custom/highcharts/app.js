@@ -97,19 +97,21 @@ function queryDatabase (db, month, cb) {
                 from `purchase` join `item`\
                 on `purchase`.`item_id` = `item`.`id`\
                 where DATE(`date`) between '"+first+"' and '"+last+"'\
-                group by `item_id`;" +
-                // total spend cache for this month
-                "select SUM(`cache`) as 'total'\
-                from `purchase`\
-                where DATE(`date`) between '"+first+"' and '"+last+"';";
-    
-    db.connection.query(sql, function (err, results) {
+                group by `item_id`;";
+    db.client.query(sql, function (err, items) {
         if (err) return cb(err);
+        // total spend cache for this month
+        var sql = "select SUM(`cache`) as 'total'\
+                    from `purchase`\
+                    where DATE(`date`) between '"+first+"' and '"+last+"';";
+        db.client.query(sql, function (err, sum) {
+            if (err) return cb(err);
+            
+            // queries results
+            var rows  = items,
+                total = sum[0].total;
 
-        // queries results
-        var rows  = results[0],
-            total = results[1][0].total;
-
-        cb(null, rows, total);
+            cb(null, rows, total);
+        });
     });
 }
