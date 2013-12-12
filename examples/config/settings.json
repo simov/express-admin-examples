@@ -1029,6 +1029,27 @@
                 }
             },
             {
+                "name": "static",
+                "verbose": "static",
+                "control": {
+                    "select": true,
+                    "options": [
+                        "one",
+                        "two",
+                        "three"
+                    ]
+                },
+                "type": "varchar(45)",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
                 "name": "text",
                 "verbose": "text",
                 "control": {
@@ -1050,8 +1071,8 @@
                 "control": {
                     "radio": true,
                     "options": [
-                        "No",
-                        "Yes"
+                        "Yes",
+                        "No"
                     ]
                 },
                 "type": "tinyint(1)",
@@ -1148,7 +1169,8 @@
                 "name": "textarea",
                 "verbose": "textarea",
                 "control": {
-                    "textarea": true
+                    "textarea": true,
+                    "editor": "ck-compact"
                 },
                 "type": "text",
                 "allowNull": true,
@@ -1428,6 +1450,27 @@
                 }
             },
             {
+                "name": "static",
+                "verbose": "static",
+                "control": {
+                    "select": true,
+                    "options": [
+                        "one",
+                        "two",
+                        "three"
+                    ]
+                },
+                "type": "varchar(45)",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
                 "name": "text",
                 "verbose": "text",
                 "control": {
@@ -1449,8 +1492,8 @@
                 "control": {
                     "radio": true,
                     "options": [
-                        "No",
-                        "Yes"
+                        "Yes",
+                        "No"
                     ]
                 },
                 "type": "tinyint(1)",
@@ -1547,7 +1590,8 @@
                 "name": "textarea",
                 "verbose": "textarea",
                 "control": {
-                    "text": true
+                    "textarea": true,
+                    "editor": "ck-compact"
                 },
                 "type": "text",
                 "allowNull": false,
