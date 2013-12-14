@@ -1,0 +1,85 @@
+{
+    "editors": {
+        "app": {
+            "path": "/home/mighty/node/modules/express-admin-examples/examples/custom/editors/app",
+            "slug": "upload"
+        },
+        "public": {
+            "external": {
+                "js": [
+                    "//cdnjs.cloudflare.com/ajax/libs/ckeditor/4.2/ckeditor.js"
+                ]
+            },
+            "local": {
+                "path": "/home/mighty/node/modules/express-admin-examples/examples/custom/editors",
+                "js": [
+                    "/jslib/tinymce/js/tinymce/tinymce.min.js",
+                    "/jslib/tinymce/js/tinymce/jquery.tinymce.min.js",
+                    "/editors.js"
+                ]
+            }
+        }
+    },
+    "view1": {
+        "app": {
+            "path": "/home/mighty/node/modules/express-admin-examples/examples/custom/app1/app",
+            "slug": "view1",
+            "verbose": "Simple",
+            "mainview": {
+                "show": true
+            }
+        }
+    },
+    "view2": {
+        "app": {
+            "path"  : "/home/mighty/node/modules/express-admin-examples/examples/custom/app2/app",
+            "slug": "view2",
+            "verbose": "Custom global static files",
+            "mainview": {
+                "show": true
+            }
+        },
+        "public": {
+            "path": "/home/mighty/node/modules/express-admin-examples/examples/custom/app2/public",
+            "css": [
+                "/css/global.css"
+            ],
+            "js": [
+                "/js/global.js"
+            ]
+        }
+    },
+    "view3": {
+        "app": {
+            "path"  : "/home/mighty/node/modules/express-admin-examples/examples/custom/app3/app",
+            "slug": "view3",
+            "verbose": "Custom local static files",
+            "mainview": {
+                "show": true
+            }
+        },
+        "public": {
+            "path": "/home/mighty/node/modules/express-admin-examples/examples/custom/app3/public"
+        }
+    },
+    "view4": {
+        "app": {
+            "path"  : "/home/mighty/node/modules/express-admin-examples/examples/custom/app4/app",
+            "slug": "view4",
+            "verbose": "Breadcrumbs",
+            "mainview": {
+                "show": true
+            }
+        }
+    },
+    "stats": {
+        "app": {
+            "path"  : "/home/mighty/node/modules/express-admin-examples/examples/custom/highcharts/app",
+            "slug": "stats",
+            "verbose": "Highcharts Statistics",
+            "mainview": {
+                "show": true
+            }
+        }
+    }
+}
