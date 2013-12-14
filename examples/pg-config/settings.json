@@ -981,7 +981,7 @@
                     "multiple": true
                 },
                 "type": "int(11)",
-                "allowNull": false,
+                "allowNull": true,
                 "listview": {
                     "show": true
                 },
@@ -1011,7 +1011,7 @@
                     "multiple": true
                 },
                 "type": "int(11)",
-                "allowNull": false,
+                "allowNull": true,
                 "listview": {
                     "show": true
                 },
@@ -1451,7 +1451,7 @@
                     ]
                 },
                 "type": "varchar(45)",
-                "allowNull": true,
+                "allowNull": false,
                 "defaultValue": null,
                 "listview": {
                     "show": true
