@@ -231,6 +231,9 @@
                 },
                 "type": "int(11)",
                 "allowNull": false,
+                "listview": {
+                    "show": false
+                },
                 "editview": {
                     "show": true
                 },
@@ -258,6 +261,9 @@
                 },
                 "type": "int(11)",
                 "allowNull": true,
+                "listview": {
+                    "show": false
+                },
                 "editview": {
                     "show": true
                 },
