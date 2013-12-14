@@ -15,21 +15,43 @@ $ npm install
 ```
 
 ##Create the schema and the test user
+######MySQL
 ```sql
 CREATE SCHEMA `express-admin-examples` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
 CREATE USER liolio@localhost IDENTIFIED BY 'karamba' ;
 GRANT ALL ON `express-admin-examples`.* TO liolio@localhost ;
 ```
+######PostgreSQL
+```sql
+create database "express-admin-examples";
+-- create schema 'name'; (default: 'public')
+create user liolio with password 'karamba';
+grant all on database "express-admin-examples" to liolio;
+-- public schema by default
+grant all on schema "public" to liolio;
+grant all on all tables in schema "public" to liolio;
+grant all on all sequences in schema "public" to liolio;
+```
+
 
 ##Import the schema and the test data
+######MySQL
 ```bash
 $ mysql -p --user=root 'express-admin-examples' < fixtures/examples/schema.sql
 $ mysql -p --user=root 'express-admin-examples' < fixtures/examples/insert.sql
 ```
+######PostgreSQL
+```bash
+$ sudo -u postgres psql 'express-admin-examples' < fixtures/pg-examples/schema.sql
+$ sudo -u postgres psql 'express-admin-examples' < fixtures/pg-examples/insert.sql
+```
 
 ##Run the Admin
 ```bash
+# MySql
 $ admin examples/config/
+# PostgreSQL
+$ admin examples/pg-config/
 ```
 
 ##Navigate to `http://localhost:3000`
