@@ -40,13 +40,15 @@
             }
         },
         "public": {
-            "path": "/home/mighty/node/modules/express-admin-examples/examples/custom/app2/public",
-            "css": [
-                "/css/global.css"
-            ],
-            "js": [
-                "/js/global.js"
-            ]
+            "local": {
+                "path": "/home/mighty/node/modules/express-admin-examples/examples/custom/app2/public",
+                "css": [
+                    "/css/global.css"
+                ],
+                "js": [
+                    "/js/global.js"
+                ]
+            }
         }
     },
     "view3": {
@@ -59,7 +61,9 @@
             }
         },
         "public": {
-            "path": "/home/mighty/node/modules/express-admin-examples/examples/custom/app3/public"
+            "local": {
+                "path": "/home/mighty/node/modules/express-admin-examples/examples/custom/app3/public"
+            }
         }
     },
     "view4": {
