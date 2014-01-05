@@ -1178,7 +1178,22 @@
         },
         "listview": {
             "order": {},
-            "page": 25
+            "page": 25,
+            "filter": [
+                "controls_otm_single_id",
+                "controls_otm_multiple_id",
+                "controls_mtm_single",
+                "controls_mtm_multiple",
+                "static",
+                "text",
+                "boolean",
+                "upload",
+                "date",
+                "time",
+                "datetime",
+                "year",
+                "textarea"
+            ]
         },
         "editview": {
             "readonly": false,
