@@ -85,5 +85,15 @@
                 "show": true
             }
         }
+    },
+    "listview": {
+        "public": {
+            "local": {
+                "path": "/home/mighty/node/modules/express-admin-examples/examples/custom/listview",
+                "js": [
+                    "/mtm-tags.js"
+                ]
+            }
+        }
     }
 }
