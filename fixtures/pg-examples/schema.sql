@@ -57,6 +57,7 @@ CREATE  TABLE IF NOT EXISTS "item" (
   "id" INT NOT NULL DEFAULT nextval('item_id_seq') ,
   "name" VARCHAR(45) NOT NULL ,
   "description" TEXT NULL ,
+  "image" VARCHAR(255) NULL ,
   PRIMARY KEY ("id") );
 
 

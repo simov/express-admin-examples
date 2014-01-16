@@ -11,9 +11,9 @@ insert into "user" ("firstname","lastname") VALUES ('Jeff','Cox');
 insert into "user" ("firstname","lastname") VALUES ('Ann','Hart');
 insert into "user" ("firstname","lastname") VALUES ('Jack','Dean');
 
-insert into "item" ("name","description") VALUES ('coffee','');
-insert into "item" ("name","description") VALUES ('tea','');
-insert into "item" ("name","description") VALUES ('energy','');
+insert into "item" ("name","description") VALUES ('coffee','','http://i.imgur.com/aRGnsmZ.jpg');
+insert into "item" ("name","description") VALUES ('tea','','http://i.imgur.com/Q4ifnMA.jpg');
+insert into "item" ("name","description") VALUES ('energy','','http://i.imgur.com/MmWBoOR.jpg');
 insert into "item" ("name","description") VALUES ('cherries','');
 insert into "item" ("name","description") VALUES ('chocolate','');
 

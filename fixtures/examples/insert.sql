@@ -10,9 +10,9 @@ insert into `user` set `firstname` = 'Jeff', `lastname` = 'Cox';
 insert into `user` set `firstname` = 'Ann', `lastname` = 'Hart';
 insert into `user` set `firstname` = 'Jack', `lastname` = 'Dean';
 
-insert into `item` set `name` = 'coffee', `description` = '';
-insert into `item` set `name` = 'tea', `description` = '';
-insert into `item` set `name` = 'energy', `description` = '';
+insert into `item` set `name` = 'coffee', `description` = '', `image` = 'http://i.imgur.com/aRGnsmZ.jpg';
+insert into `item` set `name` = 'tea', `description` = '', `image` = 'http://i.imgur.com/Q4ifnMA.jpg';
+insert into `item` set `name` = 'energy', `description` = '', `image` = 'http://i.imgur.com/MmWBoOR.jpg';
 insert into `item` set `name` = 'cherries', `description` = '';
 insert into `item` set `name` = 'chocolate', `description` = '';
 
