@@ -44,6 +44,8 @@ CREATE TABLE IF NOT EXISTS `user` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `firstname` VARCHAR(45) NOT NULL,
   `lastname` VARCHAR(45) NULL,
+  `created_at` DATETIME NOT NULL,
+  `updated_at` DATETIME NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -58,7 +60,7 @@ CREATE TABLE IF NOT EXISTS `purchase` (
   `item_id` INT NOT NULL,
   `user_id` INT NULL,
   `cache` DECIMAL(6,2) NOT NULL,
-  `date` DATETIME NULL,
+  `date` DATE NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_purchase_item_idx` (`item_id` ASC),
   INDEX `fk_purchase_user1_idx` (`user_id` ASC),

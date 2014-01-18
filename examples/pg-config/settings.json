@@ -92,7 +92,7 @@
                 "control": {
                     "date": true
                 },
-                "type": "datetime",
+                "type": "date",
                 "allowNull": true,
                 "defaultValue": null,
                 "listview": {
@@ -572,6 +572,38 @@
                 },
                 "editview": {
                     "show": true
+                }
+            },
+            {
+                "name": "created_at",
+                "verbose": "created_at",
+                "control": {
+                    "text": true
+                },
+                "type": "datetime",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": false
+                }
+            },
+            {
+                "name": "updated_at",
+                "verbose": "updated_at",
+                "control": {
+                    "text": true
+                },
+                "type": "datetime",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": false
                 }
             }
         ],
