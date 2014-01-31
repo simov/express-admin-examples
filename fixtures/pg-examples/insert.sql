@@ -7,13 +7,13 @@ alter sequence "item_id_seq" restart with 1;
 alter sequence "user_id_seq" restart with 1;
 alter sequence "purchase_id_seq" restart with 1;
 
-insert into "user" ("firstname","lastname","created_at","updated_at") VALUES ('Jeff','Cox'),'2014-01-10 22:17:13','2014-01-10 22:17:13'; 
+insert into "user" ("firstname","lastname","created_at","updated_at") VALUES ('Jeff','Cox','2014-01-10 22:17:13','2014-01-10 22:17:13');
 insert into "user" ("firstname","lastname","created_at","updated_at") VALUES ('Ann','Hart','2014-01-15 14:57:00','2014-01-15 14:57:00');
 insert into "user" ("firstname","lastname","created_at","updated_at") VALUES ('Jack','Dean','2014-01-20 01:12:33','2014-01-20 01:12:33');
 
-insert into "item" ("name","description") VALUES ('coffee','','http://i.imgur.com/aRGnsmZ.jpg');
-insert into "item" ("name","description") VALUES ('tea','','http://i.imgur.com/Q4ifnMA.jpg');
-insert into "item" ("name","description") VALUES ('energy','','http://i.imgur.com/MmWBoOR.jpg');
+insert into "item" ("name","description") VALUES ('coffee','http://i.imgur.com/aRGnsmZ.jpg');
+insert into "item" ("name","description") VALUES ('tea','http://i.imgur.com/Q4ifnMA.jpg');
+insert into "item" ("name","description") VALUES ('energy','http://i.imgur.com/MmWBoOR.jpg');
 insert into "item" ("name","description") VALUES ('cherries','');
 insert into "item" ("name","description") VALUES ('chocolate','');
 
