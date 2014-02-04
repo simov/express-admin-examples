@@ -11,11 +11,11 @@ insert into "user" ("firstname","lastname","created_at","updated_at") VALUES ('J
 insert into "user" ("firstname","lastname","created_at","updated_at") VALUES ('Ann','Hart','2014-01-15 14:57:00','2014-01-15 14:57:00');
 insert into "user" ("firstname","lastname","created_at","updated_at") VALUES ('Jack','Dean','2014-01-20 01:12:33','2014-01-20 01:12:33');
 
-insert into "item" ("name","description") VALUES ('coffee','http://i.imgur.com/aRGnsmZ.jpg');
-insert into "item" ("name","description") VALUES ('tea','http://i.imgur.com/Q4ifnMA.jpg');
-insert into "item" ("name","description") VALUES ('energy','http://i.imgur.com/MmWBoOR.jpg');
-insert into "item" ("name","description") VALUES ('cherries','');
-insert into "item" ("name","description") VALUES ('chocolate','');
+insert into "item" ("name","image") VALUES ('coffee','http://i.imgur.com/aRGnsmZ.jpg');
+insert into "item" ("name","image") VALUES ('tea','http://i.imgur.com/Q4ifnMA.jpg');
+insert into "item" ("name","image") VALUES ('energy','http://i.imgur.com/MmWBoOR.jpg');
+insert into "item" ("name") VALUES ('cherries');
+insert into "item" ("name") VALUES ('chocolate');
 
 insert into "purchase" ("item_id","user_id","cache","date") VALUES (1,3,17.5,'2012-01-01');
 insert into "purchase" ("item_id","user_id","cache","date") VALUES (2,1,37.5,'2012-01-12');

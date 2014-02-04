@@ -10,11 +10,11 @@ insert into `user` set `firstname` = 'Jeff', `lastname` = 'Cox', `created_at` = 
 insert into `user` set `firstname` = 'Ann', `lastname` = 'Hart', `created_at` = '2014-01-15 14:57:00', `updated_at` = '2014-01-15 14:57:00';
 insert into `user` set `firstname` = 'Jack', `lastname` = 'Dean', `created_at` = '2014-01-20 01:12:33', `updated_at` = '2014-01-20 01:12:33';
 
-insert into `item` set `name` = 'coffee', `description` = '', `image` = 'http://i.imgur.com/aRGnsmZ.jpg';
-insert into `item` set `name` = 'tea', `description` = '', `image` = 'http://i.imgur.com/Q4ifnMA.jpg';
-insert into `item` set `name` = 'energy', `description` = '', `image` = 'http://i.imgur.com/MmWBoOR.jpg';
-insert into `item` set `name` = 'cherries', `description` = '';
-insert into `item` set `name` = 'chocolate', `description` = '';
+insert into `item` (`name`,`image`) VALUES ('coffee','http://i.imgur.com/aRGnsmZ.jpg');
+insert into `item` (`name`,`image`) VALUES ('tea','http://i.imgur.com/Q4ifnMA.jpg');
+insert into `item` (`name`,`image`) VALUES ('energy','http://i.imgur.com/MmWBoOR.jpg');
+insert into `item` (`name`) VALUES ('cherries');
+insert into `item` (`name`) VALUES ('chocolate');
 
 insert into `purchase` set `item_id` = 1, `user_id` = 3, `cache` = 17.5, `date` = '2012-01-01';
 insert into `purchase` set `item_id` = 2, `user_id` = 1, `cache` = 37.5, `date` = '2012-01-12';
