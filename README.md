@@ -45,13 +45,21 @@ $ mysql -p --user=root 'express-admin-examples' < fixtures/examples/insert.sql
 $ sudo -u postgres psql 'express-admin-examples' < fixtures/pg-examples/schema.sql
 $ sudo -u postgres psql 'express-admin-examples' < fixtures/pg-examples/insert.sql
 ```
+######SQLite
+```bash
+$ cd fixtures/sqlite-examples/
+$ node import.js
+# change the path to the database inside `examples/sqlite-config/config.json`
+```
 
 ##Run the Admin
 ```bash
-# MySql
+# MySQL
 $ admin examples/config/
 # PostgreSQL
 $ admin examples/pg-config/
+# SQLite
+$ admin examples/sqlite-config/
 ```
 
 ##Navigate to `http://localhost:3000`

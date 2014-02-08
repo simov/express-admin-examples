@@ -16,3 +16,4 @@ results
 
 node_modules
 npm-debug.log
+fixtures/sqlite-examples/db.sqlite

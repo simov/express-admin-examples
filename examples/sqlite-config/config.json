@@ -1,0 +1,13 @@
+{
+    "sqlite": {
+        "database": "/home/mighty/node/modules/express-admin-examples/fixtures/sqlite-examples/db.sqlite"
+    },
+    "server": {
+        "port": 3000
+    },
+    "app": {
+        "layouts": true,
+        "themes": true,
+        "languages": true
+    }
+}
