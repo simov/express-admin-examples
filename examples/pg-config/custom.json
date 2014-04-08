@@ -82,14 +82,20 @@
             }
         }
     },
-    "listview": {
+    "static": {
         "public": {
             "local": {
-                "path": "/home/mighty/node/modules/express-admin-examples/examples/custom/listview",
+                "path": "/home/mighty/node/modules/express-admin-examples/examples/custom/static",
                 "js": [
-                    "/mtm-tags.js"
+                    "/mtm-tags.js",
+                    "/theme.js",
+                    "/images.js",
+                    "/binary.js"
                 ]
             }
         }
+    },
+    "events": {
+        "events": "/home/mighty/node/modules/express-admin-examples/examples/custom/events/events.js"
     }
 }

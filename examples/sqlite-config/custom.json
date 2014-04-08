@@ -93,7 +93,8 @@
                 "js": [
                     "/mtm-tags.js",
                     "/theme.js",
-                    "/images.js"
+                    "/images.js",
+                    "/binary.js"
                 ]
             }
         }
