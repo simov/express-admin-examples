@@ -1156,6 +1156,23 @@
                 }
             },
             {
+                "name": "binary",
+                "verbose": "binary",
+                "control": {
+                    "file": true,
+                    "binary": true
+                },
+                "type": "BLOB",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
                 "name": "date",
                 "verbose": "date",
                 "control": {
@@ -1582,6 +1599,23 @@
                     "file": true
                 },
                 "type": "varchar(45)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "binary",
+                "verbose": "binary",
+                "control": {
+                    "file": true,
+                    "binary": true
+                },
+                "type": "BLOB",
                 "allowNull": false,
                 "defaultValue": null,
                 "listview": {

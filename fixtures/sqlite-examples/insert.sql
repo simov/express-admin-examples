@@ -164,18 +164,18 @@ insert into `controls_inline_mtm_multiple` (`first`) values ('three');
 insert into `controls_inline_mtm_multiple` (`first`,`last`) values ('four','five');
 -- controls
 insert into `controls`
-	(`controls_otm_single_id`,`controls_otm_multiple_id`,`static`,`text`,`boolean`,`upload`,`date`,`time`,`datetime`,`textarea`)
-	values (1,1,'two','text','1','file','2013-12-10','20:36','2014-12-10 7:50','text');
+	(`controls_otm_single_id`,`controls_otm_multiple_id`,`static`,`text`,`boolean`,`upload`,`binary`,`date`,`time`,`datetime`,`textarea`)
+	values (1,1,'two','text','1','file','','2013-12-10','20:36','2014-12-10 7:50','text');
 insert into `controls`
 	(`text`)
 	values ('all other empty');
 -- controls inline
 insert into `controls_inline`
-	(`controls_id`,`controls_inline_otm_single_id`,`controls_inline_otm_multiple_id`,`static`,`text`,`boolean`,`upload`,`date`,`time`,`datetime`,`year`,`textarea`)
-	values (1,2,2,'three','text','1','file','2013-12-10','20:36','2014-12-10 7:50','2014','text');
+	(`controls_id`,`controls_inline_otm_single_id`,`controls_inline_otm_multiple_id`,`static`,`text`,`boolean`,`upload`,`binary`,`date`,`time`,`datetime`,`year`,`textarea`)
+	values (1,2,2,'three','text','1','file','','2013-12-10','20:36','2014-12-10 7:50','2014','text');
 insert into `controls_inline`
-	(`controls_id`,`controls_inline_otm_single_id`,`controls_inline_otm_multiple_id`,`static`,`text`,`boolean`,`upload`,`date`,`time`,`datetime`,`year`,`textarea`)
-	values (2,3,3,'one','text','0','file','2013-12-10','20:36','2014-12-10 7:50','2014','text');
+	(`controls_id`,`controls_inline_otm_single_id`,`controls_inline_otm_multiple_id`,`static`,`text`,`boolean`,`upload`,`binary`,`date`,`time`,`datetime`,`year`,`textarea`)
+	values (2,3,3,'one','text','0','file','','2013-12-10','20:36','2014-12-10 7:50','2014','text');
 -- link
 insert into `controls_has_controls_mtm_single` (`controls_id`,`controls_mtm_single_id`) values (1,1);
 insert into `controls_has_controls_mtm_multiple` (`controls_id`,`controls_mtm_multiple_id`) values (1,1);
