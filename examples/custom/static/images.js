@@ -1,12 +1,12 @@
 
 $(function () {
     // show all imgur urls as images inside the Listview
-    $('.ex-table td:contains(imgur)').each(function (index) {
+    $('.x-table td:contains(imgur)').each(function (index) {
         $(this).html('<img src="'+$(this).text().trim()+'" style="width:100px" />')
     });
 
     // show all imgur urls as images inside the Editview
-    $('.ex-table [type=text]').each(function (index) {
+    $('.x-table [type=text]').each(function (index) {
         if ($(this).val().match(/.*imgur.*/)) {
             $(this).parent().append('<img src="'+$(this).val()+'" style="margin-top:10px" />')
         }
