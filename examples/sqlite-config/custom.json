@@ -1,7 +1,7 @@
 {
     "editors": {
         "app": {
-            "path": "/home/mighty/node/modules/express-admin-examples/examples/custom/editors/app",
+            "path": "/home/mighty/node/modules/express-admin-examples/examples/custom/editors/app.js",
             "slug": "upload"
         },
         "public": {
@@ -22,7 +22,7 @@
     },
     "view1": {
         "app": {
-            "path": "/home/mighty/node/modules/express-admin-examples/examples/custom/app1/app",
+            "path": "/home/mighty/node/modules/express-admin-examples/examples/custom/app1/app.js",
             "slug": "view1",
             "verbose": "Simple",
             "mainview": {
@@ -32,7 +32,7 @@
     },
     "view2": {
         "app": {
-            "path"  : "/home/mighty/node/modules/express-admin-examples/examples/custom/app2/app",
+            "path"  : "/home/mighty/node/modules/express-admin-examples/examples/custom/app2/app.js",
             "slug": "view2",
             "verbose": "Custom global static files",
             "mainview": {
@@ -53,7 +53,7 @@
     },
     "view3": {
         "app": {
-            "path"  : "/home/mighty/node/modules/express-admin-examples/examples/custom/app3/app",
+            "path"  : "/home/mighty/node/modules/express-admin-examples/examples/custom/app3/app.js",
             "slug": "view3",
             "verbose": "Custom local static files",
             "mainview": {
@@ -68,7 +68,7 @@
     },
     "view4": {
         "app": {
-            "path"  : "/home/mighty/node/modules/express-admin-examples/examples/custom/app4/app",
+            "path"  : "/home/mighty/node/modules/express-admin-examples/examples/custom/app4/app.js",
             "slug": "view4",
             "verbose": "Breadcrumbs",
             "mainview": {
@@ -78,7 +78,7 @@
     },
     "stats": {
         "app": {
-            "path"  : "/home/mighty/node/modules/express-admin-examples/examples/custom/highcharts/app",
+            "path"  : "/home/mighty/node/modules/express-admin-examples/examples/custom/highcharts/app.js",
             "slug": "stats",
             "verbose": "Highcharts Statistics",
             "mainview": {
