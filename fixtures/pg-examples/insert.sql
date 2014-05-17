@@ -235,11 +235,11 @@ insert into "controls"
 	values ('all other empty');
 -- controls inline
 insert into "controls_inline"
-	("controls_id","controls_inline_otm_single_id","controls_inline_otm_multiple_id","static","text","boolean","upload","binary","date","time","datetime","textarea")
-	values (1,2,2,'three','text','1','file','','2013-12-10','20:36','2014-12-10 7:50','text');
+	("controls_id","controls_inline_otm_single_id","controls_inline_otm_multiple_id","static","text","boolean","bigint","double","upload","binary","date","time","datetime","textarea")
+	values (1,2,2,'three','text','1',1000000,15.50,'file','','2013-12-10','20:36','2014-12-10 7:50','text');
 insert into "controls_inline"
-	("controls_id","controls_inline_otm_single_id","controls_inline_otm_multiple_id","static","text","boolean","upload","binary","date","time","datetime","textarea")
-	values (2,3,3,'one','text','0','file','','2013-12-10','20:36','2014-12-10 7:50','text');
+	("controls_id","controls_inline_otm_single_id","controls_inline_otm_multiple_id","static","text","boolean","bigint","double","upload","binary","date","time","datetime","textarea")
+	values (2,3,3,'one','text','0',900,16.67,'file','','2013-12-10','20:36','2014-12-10 7:50','text');
 -- link
 insert into "controls_has_controls_mtm_single" ("controls_id","controls_mtm_single_id") values (1,1);
 insert into "controls_has_controls_mtm_multiple" ("controls_id","controls_mtm_multiple_id") values (1,1);

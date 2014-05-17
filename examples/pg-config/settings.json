@@ -1140,6 +1140,38 @@
                 }
             },
             {
+                "name": "bigint",
+                "verbose": "bigint",
+                "control": {
+                    "number": true
+                },
+                "type": "bigint",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "double",
+                "verbose": "double",
+                "control": {
+                    "number": true
+                },
+                "type": "double",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
                 "name": "upload",
                 "verbose": "upload",
                 "control": {
@@ -1252,6 +1284,8 @@
                 "static",
                 "text",
                 "boolean",
+                "bigint",
+                "double",
                 "upload",
                 "date",
                 "time",
@@ -1567,6 +1601,38 @@
                     ]
                 },
                 "type": "char",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "bigint",
+                "verbose": "bigint",
+                "control": {
+                    "number": true
+                },
+                "type": "bigint",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "double",
+                "verbose": "double",
+                "control": {
+                    "number": true
+                },
+                "type": "double",
                 "allowNull": false,
                 "defaultValue": null,
                 "listview": {
