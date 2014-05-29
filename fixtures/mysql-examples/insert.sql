@@ -6,9 +6,9 @@ truncate table `user`;
 truncate table `item`;
 truncate table `purchase`;
 
-insert into `user` set `firstname` = 'Jeff', `lastname` = 'Cox', `created_at` = '2014-01-10 22:17:13', `updated_at` = '2014-01-10 22:17:13';
-insert into `user` set `firstname` = 'Ann', `lastname` = 'Hart', `created_at` = '2014-01-15 14:57:00', `updated_at` = '2014-01-15 14:57:00';
-insert into `user` set `firstname` = 'Jack', `lastname` = 'Dean', `created_at` = '2014-01-20 01:12:33', `updated_at` = '2014-01-20 01:12:33';
+insert into `user` (`firstname`,`lastname`,`created_at`,`updated_at`) VALUES ('Jeff','Cox','2014-01-10 22:17:13','2014-01-10 22:17:13');
+insert into `user` (`firstname`,`lastname`,`created_at`,`updated_at`) VALUES ('Ann','Hart','2014-01-15 14:57:00','2014-01-15 14:57:00');
+insert into `user` (`firstname`,`lastname`,`created_at`,`updated_at`) VALUES ('Jack','Dean','2014-01-20 01:12:33','2014-01-20 01:12:33');
 
 insert into `item` (`name`,`image`) VALUES ('coffee','http://i.imgur.com/aRGnsmZ.jpg');
 insert into `item` (`name`,`image`) VALUES ('tea','http://i.imgur.com/Q4ifnMA.jpg');
