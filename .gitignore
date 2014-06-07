@@ -9,6 +9,7 @@ lib-cov
 *.bak
 *.bac
 *.BAC
+*.sqlite
 
 pids
 logs
@@ -16,4 +17,3 @@ results
 
 node_modules
 npm-debug.log
-fixtures/sqlite-examples/db.sqlite
