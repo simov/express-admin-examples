@@ -1,7 +1,7 @@
 {
     "editors": {
         "app": {
-            "path": "/home/mighty/node/modules/express-admin-examples/examples/custom/editors/app.js",
+            "path": "/home/mighty/node/modules/express-admin-examples/config/custom/editors/app.js",
             "slug": "upload"
         },
         "public": {
@@ -11,7 +11,7 @@
                 ]
             },
             "local": {
-                "path": "/home/mighty/node/modules/express-admin-examples/examples/custom/editors",
+                "path": "/home/mighty/node/modules/express-admin-examples/config/custom/editors",
                 "js": [
                     "/jslib/tinymce/js/tinymce/tinymce.min.js",
                     "/jslib/tinymce/js/tinymce/jquery.tinymce.min.js",
@@ -22,7 +22,7 @@
     },
     "view1": {
         "app": {
-            "path": "/home/mighty/node/modules/express-admin-examples/examples/custom/app1/app.js",
+            "path": "/home/mighty/node/modules/express-admin-examples/config/custom/app1/app.js",
             "slug": "view1",
             "verbose": "Simple",
             "mainview": {
@@ -32,7 +32,7 @@
     },
     "view2": {
         "app": {
-            "path"  : "/home/mighty/node/modules/express-admin-examples/examples/custom/app2/app.js",
+            "path"  : "/home/mighty/node/modules/express-admin-examples/config/custom/app2/app.js",
             "slug": "view2",
             "verbose": "Custom global static files",
             "mainview": {
@@ -41,7 +41,7 @@
         },
         "public": {
             "local": {
-                "path": "/home/mighty/node/modules/express-admin-examples/examples/custom/app2/public",
+                "path": "/home/mighty/node/modules/express-admin-examples/config/custom/app2/public",
                 "css": [
                     "/css/global.css"
                 ],
@@ -53,7 +53,7 @@
     },
     "view3": {
         "app": {
-            "path"  : "/home/mighty/node/modules/express-admin-examples/examples/custom/app3/app.js",
+            "path"  : "/home/mighty/node/modules/express-admin-examples/config/custom/app3/app.js",
             "slug": "view3",
             "verbose": "Custom local static files",
             "mainview": {
@@ -62,13 +62,13 @@
         },
         "public": {
             "local": {
-                "path": "/home/mighty/node/modules/express-admin-examples/examples/custom/app3/public"
+                "path": "/home/mighty/node/modules/express-admin-examples/config/custom/app3/public"
             }
         }
     },
     "view4": {
         "app": {
-            "path"  : "/home/mighty/node/modules/express-admin-examples/examples/custom/app4/app.js",
+            "path"  : "/home/mighty/node/modules/express-admin-examples/config/custom/app4/app.js",
             "slug": "view4",
             "verbose": "Breadcrumbs",
             "mainview": {
@@ -78,7 +78,7 @@
     },
     "stats": {
         "app": {
-            "path"  : "/home/mighty/node/modules/express-admin-examples/examples/custom/highcharts/app.js",
+            "path"  : "/home/mighty/node/modules/express-admin-examples/config/custom/highcharts/app.js",
             "slug": "stats",
             "verbose": "Highcharts Statistics",
             "mainview": {
@@ -89,7 +89,7 @@
     "static": {
         "public": {
             "local": {
-                "path": "/home/mighty/node/modules/express-admin-examples/examples/custom/static",
+                "path": "/home/mighty/node/modules/express-admin-examples/config/custom/static",
                 "js": [
                     "/mtm-tags.js",
                     "/theme.js",
@@ -100,6 +100,6 @@
         }
     },
     "events": {
-        "events": "/home/mighty/node/modules/express-admin-examples/examples/custom/events/events.js"
+        "events": "/home/mighty/node/modules/express-admin-examples/config/custom/events/events.js"
     }
 }

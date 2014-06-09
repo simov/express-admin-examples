@@ -1,6 +1,6 @@
 {
     "sqlite": {
-        "database": "/home/mighty/node/modules/express-admin-examples/fixtures/sqlite-examples/db.sqlite"
+        "database": "/home/mighty/node/modules/express-admin-examples/fixtures/sqlite/db.sqlite"
     },
     "server": {
         "port": 3000

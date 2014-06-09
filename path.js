@@ -2,7 +2,7 @@
 
 var fs = require('fs'),
     path = require('path');
-var fpath = path.join(__dirname, './examples/config/custom.json');
+var fpath = path.join(__dirname, './config/mysql/custom.json');
 
 var data = fs.readFileSync(fpath, 'utf8');
 fs.writeFileSync(fpath,
