@@ -1,5 +1,5 @@
 
-#Express Admin Examples
+# Express Admin Examples
 
 This is the examples repository for [Express Admin][1]
 
@@ -8,21 +8,21 @@ Other locations:
 - [Documentation][3]
 - [System Tests][4]
 
-##Install
+## Install
 ```bash
 $ git clone https://github.com/simov/express-admin-examples
 $ cd express-admin-examples
 $ npm install
 ```
 
-##Create the schema and the test user
-######MySQL
+## Create the schema and the test user
+###### MySQL
 ```sql
-CREATE SCHEMA `express-admin-examples` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
+CREATE SCHEMA `express-admin-examples` ;
 CREATE USER liolio@localhost IDENTIFIED BY 'karamba' ;
 GRANT ALL ON `express-admin-examples`.* TO liolio@localhost ;
 ```
-######PostgreSQL
+###### PostgreSQL
 ```sql
 create database "express-admin-examples";
 -- create schema 'name'; (default: 'public')
@@ -35,25 +35,21 @@ grant all on all sequences in schema "public" to liolio;
 ```
 
 
-##Import the schema and the test data
-######MySQL
+## Import the schema and the test data
+
 ```bash
+# MySQL
 $ mysql -p --user=root 'express-admin-examples' < fixtures/mysql/schema.sql
 $ mysql -p --user=root 'express-admin-examples' < fixtures/mysql/insert.sql
-```
-######PostgreSQL
-```bash
+# PostgreSQL
 $ sudo -u postgres psql 'express-admin-examples' < fixtures/pg/schema.sql
 $ sudo -u postgres psql 'express-admin-examples' < fixtures/pg/insert.sql
+# SQLite
+$ node fixtures/sqlite/import.js
 ```
-######SQLite
-```bash
-$ cd fixtures/sqlite/
-$ node import.js
-# change the path to the database inside `config/sqlite/config.json`
-```
+For SQLite you need to change the path to the database inside `config/sqlite/config.json`
 
-##Run the Admin
+## Run the Admin
 ```bash
 # MySQL
 $ admin config/mysql/
@@ -63,7 +59,7 @@ $ admin config/pg/
 $ admin config/sqlite/
 ```
 
-##Navigate to `http://localhost:3000`
+## Navigate to `http://localhost:3000`
 Username: **admin**
 Password: **11aaAA**
 
