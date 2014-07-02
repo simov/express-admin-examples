@@ -88,6 +88,8 @@ CREATE  TABLE IF NOT EXISTS "purchase" (
   "user_id" INT NULL ,
   "cache" DECIMAL(6,2) NOT NULL ,
   "date" DATE NULL ,
+  "deleted" BOOLEAN NULL,
+  "deleted_at" TIMESTAMP NULL,
   PRIMARY KEY ("id") ,
   
   CONSTRAINT "item_id"

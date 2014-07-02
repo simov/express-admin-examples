@@ -61,6 +61,8 @@ CREATE TABLE IF NOT EXISTS `purchase` (
   `user_id` INT NULL,
   `cache` DECIMAL(6,2) NOT NULL,
   `date` DATE NULL,
+  `deleted` TINYINT(1) NULL,
+  `deleted_at` DATETIME NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_purchase_item_idx` (`item_id` ASC),
   INDEX `fk_purchase_user1_idx` (`user_id` ASC),

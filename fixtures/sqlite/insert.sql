@@ -14,9 +14,9 @@ insert into `item` (`name`,`image`) VALUES ('chocolate','');
 insert into `purchase` (`item_id`,`user_id`,`cache`,`date`) VALUES (1,3,17.5,'2012-01-01');
 insert into `purchase` (`item_id`,`user_id`,`cache`,`date`) VALUES (2,1,37.5,'2012-01-12');
 insert into `purchase` (`item_id`,`user_id`,`cache`,`date`) VALUES (1,2,66.0,'2012-01-15');
-insert into `purchase` (`item_id`,`user_id`,`cache`,`date`) VALUES (4,3,15.0,'2012-01-27');
+insert into `purchase` (`item_id`,`user_id`,`cache`,`date`,`deleted`,`deleted_at`) VALUES (4,3,15.0,'2012-01-27',1,'2012-03-01 1:15');
 insert into `purchase` (`item_id`,`user_id`,`cache`,`date`) VALUES (1,2,18.9,'2012-02-07');
-insert into `purchase` (`item_id`,`user_id`,`cache`,`date`) VALUES (2,1,100, '2012-02-19');
+insert into `purchase` (`item_id`,`user_id`,`cache`,`date`) VALUES (2,1,100,'2012-02-19');
 insert into `purchase` (`item_id`,`user_id`,`cache`,`date`) VALUES (4,3,20.0,'2012-02-20');
 insert into `purchase` (`item_id`,`user_id`,`cache`,`date`) VALUES (2,3,50.0,'2012-03-08');
 insert into `purchase` (`item_id`,`user_id`,`cache`,`date`) VALUES (3,1,18.0,'2012-03-16');
@@ -25,15 +25,15 @@ insert into `purchase` (`item_id`,`user_id`,`cache`,`date`) VALUES (2,3,3.50,'20
 insert into `purchase` (`item_id`,`user_id`,`cache`,`date`) VALUES (5,1,19.0,'2012-04-09');
 insert into `purchase` (`item_id`,`user_id`,`cache`,`date`) VALUES (4,2,22.7,'2012-04-13');
 insert into `purchase` (`item_id`,`user_id`,`cache`,`date`) VALUES (3,3,44.5,'2012-04-21');
-insert into `purchase` (`item_id`,`user_id`,`cache`,`date`) VALUES (1,2,12.6,'2012-04-26');
+insert into `purchase` (`item_id`,`user_id`,`cache`,`date`,`deleted`,`deleted_at`) VALUES (1,2,12.6,'2012-04-26',1,'2012-04-28 14:57');
 insert into `purchase` (`item_id`,`user_id`,`cache`,`date`) VALUES (2,2,16.0,'2012-04-26');
 insert into `purchase` (`item_id`,`user_id`,`cache`,`date`) VALUES (2,1,40.0,'2012-05-06');
 insert into `purchase` (`item_id`,`user_id`,`cache`,`date`) VALUES (3,2,16.8,'2012-05-15');
-insert into `purchase` (`item_id`,`user_id`,`cache`,`date`) VALUES (4,3,9.0, '2012-05-22');
+insert into `purchase` (`item_id`,`user_id`,`cache`,`date`) VALUES (4,3,9.0,'2012-05-22');
 insert into `purchase` (`item_id`,`user_id`,`cache`,`date`) VALUES (2,1,40.0,'2012-06-06');
 insert into `purchase` (`item_id`,`user_id`,`cache`,`date`) VALUES (3,2,16.0,'2012-06-15');
 insert into `purchase` (`item_id`,`user_id`,`cache`,`date`) VALUES (5,3,19.0,'2012-06-22');
-insert into `purchase` (`item_id`,`user_id`,`cache`,`date`) VALUES (3,3,40.0,'2012-06-24');
+insert into `purchase` (`item_id`,`user_id`,`cache`,`date`,`deleted`,`deleted_at`) VALUES (3,3,40.0,'2012-06-24',1,'2012-06-27 7:49');
 insert into `purchase` (`item_id`,`user_id`,`cache`,`date`) VALUES (1,3,70.0,'2012-06-27');
 
 

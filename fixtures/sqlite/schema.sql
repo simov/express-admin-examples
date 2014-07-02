@@ -36,6 +36,8 @@ CREATE TABLE `purchase` (
   `user_id` INT NULL,
   `cache` DECIMAL(6,2) NOT NULL,
   `date` DATE NULL,
+  `deleted` TINYINT(1) NULL,
+  `deleted_at` DATETIME NULL,
   CONSTRAINT `fk_purchase_item`
     FOREIGN KEY (`item_id`)
     REFERENCES `item` (`rowid`)

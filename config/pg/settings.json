@@ -101,6 +101,42 @@
                 "editview": {
                     "show": true
                 }
+            },
+            {
+                "name": "deleted",
+                "verbose": "Deleted",
+                "control": {
+                    "radio": true,
+                    "options": [
+                        "Yes",
+                        "No"
+                    ]
+                },
+                "type": "boolean",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": false
+                },
+                "editview": {
+                    "show": false
+                }
+            },
+            {
+                "name": "deleted_at",
+                "verbose": "Deleted At",
+                "control": {
+                    "datetime": true
+                },
+                "type": "datetime",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": false
+                },
+                "editview": {
+                    "show": false
+                }
             }
         ],
         "mainview": {
@@ -108,7 +144,15 @@
         },
         "listview": {
             "order": {},
-            "page": 5
+            "page": 5,
+            "filter": [
+                "item_id",
+                "user_id",
+                "cache",
+                "date",
+                "deleted",
+                "deleted_at"
+            ]
         },
         "editview": {
             "readonly": false
