@@ -1,6 +1,11 @@
 
 var moment = require('moment');
 
+function quotes (args, result) {
+    return args.db.client.pg ? result.replace(/`/g,'"') : result;
+}
+
+
 exports.preSave = function (req, res, args, next) {
     debugger;
     if (args.debug) console.log('preSave');
@@ -15,6 +20,37 @@ exports.preSave = function (req, res, args, next) {
         else if (args.action == 'update') {
             record.updated_at = now;
         }
+    }
+
+    // soft delete
+    if (args.name == 'purchase') {
+        debugger;
+
+        var now = moment(new Date()).format('YYYY-MM-DD hh:mm:ss');
+        
+        // all inline oneToOne and manyToOne records should be marked as deleted
+        for (var name in args.data.manyToOne) {
+            var table = args.data.manyToOne[name];
+            if (!table.records) continue;
+            for (var i=0; i < table.records.length; i++) {
+                if (args.action != 'remove' && !table.records[i].remove) continue;
+                delete table.records[i].remove;
+                table.records[i].columns.deleted = (args.db.client.sqlite ? 1 : true);
+                table.records[i].columns.deleted_at = now;
+            }
+        }
+
+        // parent record
+        if (args.action != 'remove') return next();
+
+        args.action = 'update';
+
+        var record = args.data.view.purchase.records[0].columns;
+
+        record.deleted = (args.db.client.sqlite ? 1 : true);
+        record.deleted_at = now;
+
+        // warning: manyToMany records are not removed
     }
     
     next();
@@ -56,4 +92,46 @@ exports.postSave = function (req, res, args, next) {
             next();
         })
         .end();
+}
+
+exports.preList = function (req, res, args, next) {
+    debugger;
+    if (args.debug) console.log('preList');
+
+    // filter out soft deleted records
+
+    // we are interested only in purchase table
+    if (args.name != 'purchase') return next();
+
+    // check if we actually want to see the deleted columns
+    var filter = args.filter.columns;
+    if (filter && (filter.deleted=='1' || filter.deleted_at && filter.deleted_at[0])) {
+        return next();
+    }
+
+    // custom filter to apply
+
+    var filter = quotes(args,
+        ' `purchase`.`deleted` IS NULL OR `purchase`.`deleted` = ' +
+        (args.db.client.pg ? 'false' : 0) +
+        ' OR `purchase`.`deleted_at` IS NULL ');
+
+    // WHERE statement position
+    var idx = args.query.indexOf('GROUP BY');
+
+    // list view query
+    if (args.query.indexOf('WHERE') == -1) {
+        args.query = args.query.slice(0,idx) + ' WHERE ' + filter + args.query.slice(idx);
+    } else {
+        args.query = args.query.slice(0,idx) + ' AND ' + filter + args.query.slice(idx);
+    }
+
+    // used in pagination query
+    if (!args.statements.where) {
+        args.statements.where = ' WHERE ' + filter;
+    } else {
+        args.statements.where += ' AND ' + filter;
+    }
+
+    next();
 }
