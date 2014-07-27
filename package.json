@@ -14,7 +14,8 @@
     },
     "dependencies": {
         "express"    : "3.4.4",
-        "moment"     : "*"
+        "moment"     : "*",
+        "cloudinary" : "*"
     },
     "scripts": {
         "postinstall": "node path.js"
