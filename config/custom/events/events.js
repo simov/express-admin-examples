@@ -7,10 +7,11 @@ function quotes (args, result) {
 
 
 exports.preSave = function (req, res, args, next) {
-    debugger;
     if (args.debug) console.log('preSave');
+    debugger;
 
-    if (args.slug == 'user') {
+    // created_at, updated_at
+    if (args.name == 'user') {
         var now = moment(new Date()).format('YYYY-MM-DD hh:mm:ss'),
             record = args.data.view.user.records[0].columns;
         if (args.action == 'insert') {
@@ -24,113 +25,94 @@ exports.preSave = function (req, res, args, next) {
 
     // soft delete
     if (args.name == 'purchase') {
-        debugger;
-
         var now = moment(new Date()).format('YYYY-MM-DD hh:mm:ss');
-        
         // all inline oneToOne and manyToOne records should be marked as deleted
-        for (var name in args.data.manyToOne) {
-            var table = args.data.manyToOne[name];
-            if (!table.records) continue;
-            for (var i=0; i < table.records.length; i++) {
-                if (args.action != 'remove' && !table.records[i].remove) continue;
-                delete table.records[i].remove;
-                table.records[i].columns.deleted = (args.db.client.sqlite ? 1 : true);
-                table.records[i].columns.deleted_at = now;
+        for (var table in args.data.manyToOne) {
+            var inline = args.data.manyToOne[table];
+            if (!inline.records) continue;
+            for (var i=0; i < inline.records.length; i++) {
+                if (args.action != 'remove' && !inline.records[i].remove) continue;
+                // instead of deleting the record
+                delete inline.records[i].remove;
+                // update it
+                inline.records[i].columns.deleted = (args.db.client.sqlite ? 1 : true);
+                inline.records[i].columns.deleted_at = now;
             }
         }
-
         // parent record
-        if (args.action != 'remove') return next();
-
-        args.action = 'update';
-
-        var record = args.data.view.purchase.records[0].columns;
-
-        record.deleted = (args.db.client.sqlite ? 1 : true);
-        record.deleted_at = now;
-
-        // warning: manyToMany records are not removed
+        if (args.action == 'remove') {
+            // instead of deleting the record
+            args.action = 'update';
+            // update it
+            var record = args.data.view.purchase.records[0].columns;
+            record.deleted = (args.db.client.sqlite ? 1 : true);
+            record.deleted_at = now;
+        }
     }
-    
+
     next();
 }
 
 
-var http = require('http');
-
-exports.postSave = function (req, res, args, next) {
-    debugger;
-    if (args.debug) console.log('postSave');
-
-    // enable this event only for the cars table
-    if (args.slug != 'car') return next();
-
-    http.request({
-            hostname: 'api.openweathermap.org',
-            port: 80,
-            path: '/data/2.5/weather?q=London,uk',
-            method: 'GET'
-        }, function (res) {
-            var buff = '';
-            res.on('data', function (chunk) {
-                buff += chunk;
-            })
-            .on('end', function () {
-                try {
-                    var data = JSON.parse(buff.toString());
-                } catch (e) {
-                    var error = new Error(res.raw);
-                }
-                console.log(data);
-
-                next();
-            });
-        })
-        .on('error', function (err) {
-            console.log('Network Error!');
-            next();
-        })
-        .end();
+// upload image to cloudinary.com
+var config = {
+    cloud_name: '',
+    api_key: '',
+    api_secret: ''
+};
+if (config.api_secret) {
+    var cloudinary = require('cloudinary'),
+        fs = require('fs'),
+        path = require('path');
+    cloudinary.config(config);
 }
 
-exports.preList = function (req, res, args, next) {
+exports.postSave = function (req, res, args, next) {
+    if (args.debug) console.log('postSave');
     debugger;
+
+    // upload image to a third party server
+    if (args.name == 'item') {
+        // provide your credentials to cloudinary.com
+        if (!config.api_secret) return next();
+        // file upload control data
+        var image = args.upload.view.item.records[0].columns.image;
+        // in case file is chosen through the file input control
+        if (image.name) {
+            // file name of the image already uploaded to the upload folder
+            var fname = args.data.view.item.records[0].columns.image;
+            // upload
+            var fpath = path.join(args.upath, fname);
+            cloudinary.uploader.upload(fpath, function (result) {
+                console.log(result);
+                next();
+            });
+        }
+        else next();
+    }
+    else next();
+}
+
+
+exports.preList = function (req, res, args, next) {
     if (args.debug) console.log('preList');
+    debugger;
 
-    // filter out soft deleted records
-
-    // we are interested only in purchase table
-    if (args.name != 'purchase') return next();
-
-    // check if we actually want to see the deleted columns
-    var filter = args.filter.columns;
-    if (filter && (filter.deleted=='1' || filter.deleted_at && filter.deleted_at[0])) {
-        return next();
-    }
-
-    // custom filter to apply
-
-    var filter = quotes(args,
-        ' `purchase`.`deleted` IS NULL OR `purchase`.`deleted` = ' +
-        (args.db.client.pg ? 'false' : 0) +
-        ' OR `purchase`.`deleted_at` IS NULL ');
-
-    // WHERE statement position
-    var idx = args.query.indexOf('GROUP BY');
-
-    // list view query
-    if (args.query.indexOf('WHERE') == -1) {
-        args.query = args.query.slice(0,idx) + ' WHERE ' + filter + args.query.slice(idx);
-    } else {
-        args.query = args.query.slice(0,idx) + ' AND ' + filter + args.query.slice(idx);
-    }
-
-    // used in pagination query
-    if (!args.statements.where) {
-        args.statements.where = ' WHERE ' + filter;
-    } else {
-        args.statements.where += ' AND ' + filter;
+    if (args.name == 'purchase') {
+        // check if we're using listview's filter
+        // and actually want to see soft deleted records
+        var filter = args.filter.columns;
+        if (filter && (filter.deleted=='1' || filter.deleted_at && filter.deleted_at[0])) {
+            return next();
+        }
+        // otherwise hide the soft deleted records by default
+        var filter = quotes(args,
+            ' `purchase`.`deleted` IS NULL OR `purchase`.`deleted` = ' +
+            (args.db.client.pg ? 'false' : 0) +
+            ' OR `purchase`.`deleted_at` IS NULL ');
+        args.statements.where
+            ? args.statements.where += ' AND ' + filter
+            : args.statements.where = ' WHERE ' + filter
     }
 
     next();
