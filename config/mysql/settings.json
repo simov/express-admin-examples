@@ -216,9 +216,9 @@
             },
             {
                 "name": "image",
-                "verbose": "Image",
+                "verbose": "image",
                 "control": {
-                    "text": true
+                    "file": true
                 },
                 "type": "varchar(255)",
                 "allowNull": true,
