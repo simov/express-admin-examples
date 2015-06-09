@@ -41,9 +41,14 @@ grant all on all sequences in schema "public" to liolio;
 # MySQL
 $ mysql -p --user=root 'express-admin-examples' < fixtures/mysql/schema.sql
 $ mysql -p --user=root 'express-admin-examples' < fixtures/mysql/insert.sql
+
 # PostgreSQL
 $ sudo -u postgres psql 'express-admin-examples' < fixtures/pg/schema.sql
 $ sudo -u postgres psql 'express-admin-examples' < fixtures/pg/insert.sql
+#... on Windows
+psql -U postgres express-admin-examples < fixtures/pg/schema.sql
+psql -U postgres express-admin-examples < fixtures/pg/insert.sql
+
 # SQLite
 $ node fixtures/sqlite/import.js
 ```
@@ -53,8 +58,12 @@ For SQLite you need to change the path to the database inside `config/sqlite/con
 ```bash
 # MySQL
 $ admin config/mysql/
+
 # PostgreSQL
 $ admin config/pg/
+# ... locally installed, on windows
+node_modules\.bin\admin config/pg
+
 # SQLite
 $ admin config/sqlite/
 ```
