@@ -1,10 +1,19 @@
 #!/usr/bin/env node
 
 var fs = require('fs'),
-    path = require('path');
+    path = require('path'),
+	util = require('util');
 
 ['mysql', 'pg', 'sqlite'].forEach(function (engine) {
-    var fpath = path.join(__dirname, './config/', engine, '/custom.json');
+	console.error( util.inspect(process.env) +"\n" );
+	
+	var cwd = (process.env.OS.match(/Windows/) !== null)?
+			__dirname.replace(/\\/g, "/"):
+			__dirname;
+	
+	console.error( "CWD: "+ cwd +"\n" );
+	
+    var fpath = path.join(cwd, './config/', engine, '/custom.json');
 
     var data = fs.readFileSync(fpath, 'utf8');
     fs.writeFileSync(fpath,
