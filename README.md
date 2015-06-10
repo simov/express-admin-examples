@@ -28,10 +28,6 @@ create database "express-admin-examples";
 -- create schema 'name'; (default: 'public')
 create user liolio with password 'karamba';
 grant all on database "express-admin-examples" to liolio;
--- public schema by default
-grant all on schema "public" to liolio;
-grant all on all tables in schema "public" to liolio;
-grant all on all sequences in schema "public" to liolio;
 ```
 
 
@@ -45,7 +41,7 @@ $ mysql -p --user=root 'express-admin-examples' < fixtures/mysql/insert.sql
 # PostgreSQL
 $ sudo -u postgres psql 'express-admin-examples' < fixtures/pg/schema.sql
 $ sudo -u postgres psql 'express-admin-examples' < fixtures/pg/insert.sql
-#... on Windows
+# ... on Windows
 psql -U postgres express-admin-examples < fixtures/pg/schema.sql
 psql -U postgres express-admin-examples < fixtures/pg/insert.sql
 
@@ -61,7 +57,7 @@ $ admin config/mysql/
 
 # PostgreSQL
 $ admin config/pg/
-# ... locally installed, on windows
+# ... locally installed, on Windows
 node_modules\.bin\admin config/pg
 
 # SQLite

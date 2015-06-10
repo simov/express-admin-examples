@@ -1,8 +1,9 @@
 #!/usr/bin/env node
+'use strict';
 
 var fs = require('fs'),
     path = require('path'),
-	util = require('util');
+    util = require('util');
 
 ['mysql', 'pg', 'sqlite'].forEach(function (engine) {
 	console.error( util.inspect(process.env) +"\n" );

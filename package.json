@@ -18,7 +18,7 @@
     "moment": "*",
     "cloudinary": "*",
     "pg": "*",
-    "util": "^0.10.3"
+    "util": "*"
   },
   "scripts": {
     "postinstall": "node path.js"
