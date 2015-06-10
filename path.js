@@ -18,6 +18,6 @@ var fs = require('fs'),
 
     var data = fs.readFileSync(fpath, 'utf8');
     fs.writeFileSync(fpath,
-        data.replace(/\/home\/mighty\/node\/modules\/express-admin-examples/g, __dirname)
+        data.replace(/\/home\/mighty\/node\/modules\/express-admin-examples/g, cwd)
     );
 });

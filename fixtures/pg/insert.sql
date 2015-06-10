@@ -3,9 +3,9 @@
 truncate table "public"."user" restart identity cascade;
 truncate table "public"."item" restart identity cascade;
 truncate table "public"."purchase" restart identity cascade;
-alter sequence "public"."public"."item_id_seq" restart with 1;
-alter sequence "public"."public"."user_id_seq" restart with 1;
-alter sequence "public"."public"."purchase_id_seq" restart with 1;
+alter sequence "public"."item_id_seq" restart with 1;
+alter sequence "public"."user_id_seq" restart with 1;
+alter sequence "public"."purchase_id_seq" restart with 1;
 
 insert into "public"."user" ("firstname","lastname","created_at","updated_at") VALUES ('Jeff','Cox','2014-01-10 22:17:13','2014-01-10 22:17:13');
 insert into "public"."user" ("firstname","lastname","created_at","updated_at") VALUES ('Ann','Hart','2014-01-15 14:57:00','2014-01-15 14:57:00');
