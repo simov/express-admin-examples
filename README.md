@@ -42,8 +42,8 @@ $ mysql -p --user=root 'express-admin-examples' < fixtures/mysql/insert.sql
 $ sudo -u postgres psql 'express-admin-examples' < fixtures/pg/schema.sql
 $ sudo -u postgres psql 'express-admin-examples' < fixtures/pg/insert.sql
 # ... on Windows
-psql -U postgres express-admin-examples < fixtures/pg/schema.sql
-psql -U postgres express-admin-examples < fixtures/pg/insert.sql
+> psql -U postgres express-admin-examples < fixtures/pg/schema.sql
+> psql -U postgres express-admin-examples < fixtures/pg/insert.sql
 
 # SQLite
 $ node fixtures/sqlite/import.js
@@ -57,8 +57,10 @@ $ admin config/mysql/
 
 # PostgreSQL
 $ admin config/pg/
+# ... locally installed, on Linux
+$ ./node_modules/.bin/admin config/pg
 # ... locally installed, on Windows
-node_modules\.bin\admin config/pg
+> node_modules\.bin\admin config/pg
 
 # SQLite
 $ admin config/sqlite/

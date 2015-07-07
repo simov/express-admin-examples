@@ -1,44 +1,15 @@
 
-DROP SCHEMA IF EXISTS "public" ;
+--DROP SCHEMA IF EXISTS "public" ;
 CREATE SCHEMA "public";
 GRANT ALL ON SCHEMA "public" to liolio;
 GRANT ALL ON ALL TABLES IN SCHEMA "public" to liolio;
 GRANT ALL ON ALL sequences IN SCHEMA "public" to liolio;
 
 
-ALTER TABLE "public"."purchase" DROP CONSTRAINT "item_id";
-ALTER TABLE "public"."purchase" DROP CONSTRAINT "user_id";
-ALTER TABLE "public"."recipe_has_recipe_types" DROP CONSTRAINT "recipe_id";
-ALTER TABLE "public"."recipe_has_recipe_types" DROP CONSTRAINT "recipe_type_id";
-ALTER TABLE "public"."recipe_has_recipe_methods" DROP CONSTRAINT "recipe_id";
-ALTER TABLE "public"."recipe_has_recipe_methods" DROP CONSTRAINT "recipe_method_id";
-ALTER TABLE "public"."address" DROP CONSTRAINT "user_id";
-ALTER TABLE "public"."phone" DROP CONSTRAINT "user_id";
-ALTER TABLE "public"."repair" DROP CONSTRAINT "car_id";
-ALTER TABLE "public"."driver" DROP CONSTRAINT "car_id";
-
-ALTER TABLE "public"."controls" DROP CONSTRAINT "controls_otm_single_id";
-ALTER TABLE "public"."controls" DROP CONSTRAINT "controls_otm_multiple_id";
-
-ALTER TABLE "public"."controls_has_controls_mtm_single" DROP CONSTRAINT "controls_id";
-ALTER TABLE "public"."controls_has_controls_mtm_single" DROP CONSTRAINT "controls_mtm_single_id";
-ALTER TABLE "public"."controls_has_controls_mtm_multiple" DROP CONSTRAINT "controls_id";
-ALTER TABLE "public"."controls_has_controls_mtm_multiple" DROP CONSTRAINT "controls_mtm_multiple_id";
-
-ALTER TABLE "public"."controls_inline" DROP CONSTRAINT "controls_inline_otm_single_id";
-ALTER TABLE "public"."controls_inline" DROP CONSTRAINT "controls_inline_otm_multiple_id";
-ALTER TABLE "public"."controls_inline" DROP CONSTRAINT "controls_id";
-
-ALTER TABLE "public"."controls_inline_has_controls_inline_mtm_single" DROP CONSTRAINT "controls_inline_id";
-ALTER TABLE "public"."controls_inline_has_controls_inline_mtm_single" DROP CONSTRAINT "controls_inline_mtm_single_id";
-ALTER TABLE "public"."controls_inline_has_controls_inline_mtm_multiple" DROP CONSTRAINT "controls_inline_id";
-ALTER TABLE "public"."controls_inline_has_controls_inline_mtm_multiple" DROP CONSTRAINT "controls_inline_mtm_multiple_id";
-
-
 -- -----------------------------------------------------
 -- Table "notes"
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS "public"."notes" ;
+--DROP TABLE IF EXISTS "public"."notes" ;
 CREATE SEQUENCE "public".notes_id_seq;
 ALTER SEQUENCE "public".notes_id_seq OWNER TO liolio;
 
@@ -52,12 +23,10 @@ CREATE  TABLE IF NOT EXISTS "public"."notes" (
 ALTER TABLE "public"."notes" OWNER TO liolio;
 
 
-
-
 -- -----------------------------------------------------
 -- Table "item"
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS "public"."item" ;
+--DROP TABLE IF EXISTS "public"."item" ;
 CREATE SEQUENCE "public".item_id_seq;
 ALTER SEQUENCE "public".item_id_seq OWNER TO liolio;
 
@@ -73,7 +42,7 @@ ALTER TABLE "public"."item" OWNER TO liolio;
 -- -----------------------------------------------------
 -- Table "user"
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS "public"."user" ;
+--DROP TABLE IF EXISTS "public"."user" ;
 CREATE SEQUENCE "public".user_id_seq;
 ALTER SEQUENCE "public".user_id_seq OWNER TO liolio;
 
@@ -90,7 +59,7 @@ ALTER TABLE "public"."user" OWNER TO liolio;
 -- -----------------------------------------------------
 -- Table "purchase"
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS "public"."purchase" ;
+--DROP TABLE IF EXISTS "public"."purchase" ;
 CREATE SEQUENCE "public".purchase_id_seq;
 ALTER SEQUENCE "public".purchase_id_seq OWNER TO liolio;
 
@@ -120,7 +89,7 @@ ALTER TABLE "public"."purchase" OWNER TO liolio;
 -- -----------------------------------------------------
 -- Table "recipe"
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS "public"."recipe" ;
+--DROP TABLE IF EXISTS "public"."recipe" ;
 CREATE SEQUENCE "public".recipe_id_seq;
 ALTER SEQUENCE  "public".recipe_id_seq OWNER TO liolio;
 
@@ -134,7 +103,7 @@ ALTER TABLE "public"."recipe" OWNER TO liolio;
 -- -----------------------------------------------------
 -- Table "recipe_type"
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS "public"."recipe_type" ;
+--DROP TABLE IF EXISTS "public"."recipe_type" ;
 CREATE SEQUENCE "public".recipe_type_id_seq;
 ALTER SEQUENCE "public".recipe_type_id_seq OWNER TO liolio;
 
@@ -148,7 +117,7 @@ ALTER TABLE "public"."recipe_type" OWNER TO liolio;
 -- -----------------------------------------------------
 -- Table "recipe_method"
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS "public"."recipe_method" ;
+--DROP TABLE IF EXISTS "public"."recipe_method" ;
 CREATE SEQUENCE "public".recipe_method_id_seq;
 ALTER SEQUENCE "public".recipe_method_id_seq OWNER TO liolio;
 
@@ -162,7 +131,7 @@ ALTER TABLE "public"."recipe_method" OWNER TO liolio;
 -- -----------------------------------------------------
 -- Table "recipe_has_recipe_types"
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS "public"."recipe_has_recipe_types" ;
+--DROP TABLE IF EXISTS "public"."recipe_has_recipe_types" ;
 
 CREATE  TABLE IF NOT EXISTS "public"."recipe_has_recipe_types" (
   "recipe_id" INT NOT NULL ,
@@ -185,7 +154,7 @@ ALTER TABLE "public"."recipe_has_recipe_types" OWNER TO liolio;
 -- -----------------------------------------------------
 -- Table "recipe_has_recipe_methods"
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS "public"."recipe_has_recipe_methods" ;
+--DROP TABLE IF EXISTS "public"."recipe_has_recipe_methods" ;
 
 CREATE  TABLE IF NOT EXISTS "public"."recipe_has_recipe_methods" (
   "recipe_id" INT NOT NULL ,
@@ -208,7 +177,7 @@ ALTER TABLE "public"."recipe_has_recipe_methods" OWNER TO liolio;
 -- -----------------------------------------------------
 -- Table "address"
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS "public"."address" ;
+--DROP TABLE IF EXISTS "public"."address" ;
 CREATE SEQUENCE "public".address_id_seq;
 ALTER SEQUENCE "public".address_id_seq OWNER TO liolio;
 
@@ -229,7 +198,7 @@ ALTER TABLE "public"."address" OWNER TO liolio;
 -- -----------------------------------------------------
 -- Table "phone"
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS "public"."phone" ;
+--DROP TABLE IF EXISTS "public"."phone" ;
 CREATE SEQUENCE "public".phone_id_seq;
 ALTER SEQUENCE "public".phone_id_seq OWNER TO liolio;
 
@@ -250,7 +219,7 @@ ALTER TABLE "public"."phone" OWNER TO liolio;
 -- -----------------------------------------------------
 -- Table "car"
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS "public"."car" ;
+--DROP TABLE IF EXISTS "public"."car" ;
 CREATE SEQUENCE "public".car_id_seq;
 ALTER SEQUENCE "public".car_id_seq OWNER TO liolio;
 
@@ -264,7 +233,7 @@ ALTER TABLE "public"."car" OWNER TO liolio;
 -- -----------------------------------------------------
 -- Table "repair"
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS "public"."repair" ;
+--DROP TABLE IF EXISTS "public"."repair" ;
 CREATE SEQUENCE "public".repair_id_seq;
 ALTER SEQUENCE "public".repair_id_seq OWNER TO liolio;
 
@@ -284,7 +253,7 @@ ALTER TABLE "public"."repair" OWNER TO liolio;
 -- -----------------------------------------------------
 -- Table "driver"
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS "public"."driver" ;
+--DROP TABLE IF EXISTS "public"."driver" ;
 CREATE SEQUENCE "public".driver_id_seq;
 ALTER SEQUENCE "public".driver_id_seq OWNER TO liolio;
 
@@ -304,7 +273,7 @@ ALTER TABLE "public"."driver" OWNER TO liolio;
 -- -----------------------------------------------------
 -- Table "controls_otm_single"
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS "public"."controls_otm_single" ;
+--DROP TABLE IF EXISTS "public"."controls_otm_single" ;
 CREATE SEQUENCE "public".controls_otm_single_id_seq;
 ALTER SEQUENCE "public".controls_otm_single_id_seq OWNER TO liolio;
 
@@ -318,7 +287,7 @@ ALTER TABLE "public"."controls_otm_single" OWNER TO liolio;
 -- -----------------------------------------------------
 -- Table "controls_otm_multiple"
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS "public"."controls_otm_multiple" ;
+--DROP TABLE IF EXISTS "public"."controls_otm_multiple" ;
 CREATE SEQUENCE "public".controls_otm_multiple_id_seq;
 ALTER SEQUENCE "public".controls_otm_multiple_id_seq OWNER TO liolio;
 
@@ -333,7 +302,7 @@ ALTER TABLE "public"."controls_otm_multiple" OWNER TO liolio;
 -- -----------------------------------------------------
 -- Table "controls"
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS "public"."controls" ;
+--DROP TABLE IF EXISTS "public"."controls" ;
 CREATE SEQUENCE "public".controls_id_seq;
 ALTER SEQUENCE "public".controls_id_seq OWNER TO liolio;
 
@@ -369,7 +338,7 @@ ALTER TABLE "public"."controls"  OWNER TO liolio;
 -- -----------------------------------------------------
 -- Table "controls_mtm_single"
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS "public"."controls_mtm_single" ;
+--DROP TABLE IF EXISTS "public"."controls_mtm_single" ;
 CREATE SEQUENCE "public".controls_mtm_single_id_seq;
 ALTER SEQUENCE "public".controls_mtm_single_id_seq OWNER TO liolio;
 
@@ -383,7 +352,7 @@ ALTER TABLE "public"."controls_mtm_single" OWNER TO liolio;
 -- -----------------------------------------------------
 -- Table "controls_mtm_multiple"
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS "public"."controls_mtm_multiple" ;
+--DROP TABLE IF EXISTS "public"."controls_mtm_multiple" ;
 CREATE SEQUENCE "public".controls_mtm_multiple_id_seq;
 ALTER SEQUENCE "public".controls_mtm_multiple_id_seq OWNER TO liolio;
 
@@ -398,8 +367,7 @@ ALTER TABLE "public"."controls_mtm_multiple"  OWNER TO liolio;
 -- -----------------------------------------------------
 -- Table "controls_has_controls_mtm_single"
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS "public"."controls_has_controls_mtm_single" ;
-ALTER SEQUENCE "public"."controls_has_controls_mtm_single" OWNER TO liolio;
+--DROP TABLE IF EXISTS "public"."controls_has_controls_mtm_single" ;
 
 CREATE TABLE IF NOT EXISTS "public"."controls_has_controls_mtm_single" (
   "controls_id" INT NOT NULL,
@@ -421,7 +389,7 @@ ALTER TABLE "public"."controls_has_controls_mtm_single"  OWNER TO liolio;
 -- -----------------------------------------------------
 -- Table "controls_has_controls_mtm_multiple"
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS "public"."controls_has_controls_mtm_multiple" ;
+--DROP TABLE IF EXISTS "public"."controls_has_controls_mtm_multiple" ;
 
 CREATE TABLE IF NOT EXISTS "public"."controls_has_controls_mtm_multiple" (
   "controls_id" INT NOT NULL,
@@ -443,7 +411,7 @@ ALTER TABLE "public"."controls_has_controls_mtm_multiple" OWNER TO liolio;
 -- -----------------------------------------------------
 -- Table "controls_inline_otm_single"
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS "public"."controls_inline_otm_single" ;
+--DROP TABLE IF EXISTS "public"."controls_inline_otm_single" ;
 CREATE SEQUENCE "public".controls_inline_otm_single_id_seq;
 ALTER SEQUENCE "public".controls_inline_otm_single_id_seq OWNER TO liolio;
 
@@ -457,9 +425,9 @@ ALTER TABLE "public"."controls_inline_otm_single" OWNER TO liolio;
 -- -----------------------------------------------------
 -- Table "controls_inline_otm_multiple"
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS "public"."controls_inline_otm_multiple" ;
+--DROP TABLE IF EXISTS "public"."controls_inline_otm_multiple" ;
 CREATE SEQUENCE "public".controls_inline_otm_multiple_id_seq;
-ALTER SEQUENCE "public"."controls_inline_otm_multiple"  OWNER TO liolio;
+ALTER SEQUENCE "public".controls_inline_otm_multiple_id_seq OWNER TO liolio;
 
 CREATE TABLE IF NOT EXISTS "public"."controls_inline_otm_multiple" (
   "id" INT NOT NULL DEFAULT nextval('controls_inline_otm_multiple_id_seq'),
@@ -472,7 +440,7 @@ ALTER TABLE "public"."controls_inline_otm_multiple"  OWNER TO liolio;
 -- -----------------------------------------------------
 -- Table "controls_inline"
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS "public"."controls_inline" ;
+--DROP TABLE IF EXISTS "public"."controls_inline" ;
 CREATE SEQUENCE "public".controls_inline_id_seq;
 ALTER SEQUENCE "public".controls_inline_id_seq OWNER TO liolio;
 
@@ -514,7 +482,7 @@ ALTER TABLE "public"."controls_inline" OWNER TO liolio;
 -- -----------------------------------------------------
 -- Table "controls_inline_mtm_single"
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS "public"."controls_inline_mtm_single" ;
+--DROP TABLE IF EXISTS "public"."controls_inline_mtm_single" ;
 CREATE SEQUENCE "public".controls_inline_mtm_single_id_seq;
 ALTER SEQUENCE "public".controls_inline_mtm_single_id_seq OWNER TO liolio;
 
@@ -528,7 +496,7 @@ ALTER TABLE "public"."controls_inline_mtm_single" OWNER TO liolio;
 -- -----------------------------------------------------
 -- Table "controls_inline_mtm_multiple"
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS "public"."controls_inline_mtm_multiple" ;
+--DROP TABLE IF EXISTS "public"."controls_inline_mtm_multiple" ;
 CREATE SEQUENCE "public".controls_inline_mtm_multiple_id_seq;
 ALTER SEQUENCE "public".controls_inline_mtm_multiple_id_seq OWNER TO liolio;
 
@@ -543,7 +511,7 @@ ALTER TABLE "public"."controls_inline_mtm_multiple" OWNER TO liolio;
 -- -----------------------------------------------------
 -- Table "controls_inline_has_controls_inline_mtm_single"
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS "public"."controls_inline_has_controls_inline_mtm_single" ;
+--DROP TABLE IF EXISTS "public"."controls_inline_has_controls_inline_mtm_single" ;
 
 CREATE TABLE IF NOT EXISTS "public"."controls_inline_has_controls_inline_mtm_single" (
   "controls_inline_id" INT NOT NULL,
@@ -565,7 +533,7 @@ ALTER TABLE "public"."controls_inline_has_controls_inline_mtm_single" OWNER TO l
 -- -----------------------------------------------------
 -- Table "controls_inline_has_controls_inline_mtm_multiple"
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS "public"."controls_inline_has_controls_inline_mtm_multiple" ;
+--DROP TABLE IF EXISTS "public"."controls_inline_has_controls_inline_mtm_multiple" ;
 
 CREATE TABLE IF NOT EXISTS "public"."controls_inline_has_controls_inline_mtm_multiple" (
   "controls_inline_id" INT NOT NULL,
@@ -582,3 +550,32 @@ CREATE TABLE IF NOT EXISTS "public"."controls_inline_has_controls_inline_mtm_mul
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
 ALTER TABLE "public"."controls_inline_has_controls_inline_mtm_multiple" OWNER TO liolio;
+
+
+ALTER TABLE "public"."purchase" DROP CONSTRAINT "item_id";
+ALTER TABLE "public"."purchase" DROP CONSTRAINT "user_id";
+ALTER TABLE "public"."recipe_has_recipe_types" DROP CONSTRAINT "recipe_id";
+ALTER TABLE "public"."recipe_has_recipe_types" DROP CONSTRAINT "recipe_type_id";
+ALTER TABLE "public"."recipe_has_recipe_methods" DROP CONSTRAINT "recipe_id";
+ALTER TABLE "public"."recipe_has_recipe_methods" DROP CONSTRAINT "recipe_method_id";
+ALTER TABLE "public"."address" DROP CONSTRAINT "user_id";
+ALTER TABLE "public"."phone" DROP CONSTRAINT "user_id";
+ALTER TABLE "public"."repair" DROP CONSTRAINT "car_id";
+ALTER TABLE "public"."driver" DROP CONSTRAINT "car_id";
+
+ALTER TABLE "public"."controls" DROP CONSTRAINT "controls_otm_single_id";
+ALTER TABLE "public"."controls" DROP CONSTRAINT "controls_otm_multiple_id";
+
+ALTER TABLE "public"."controls_has_controls_mtm_single" DROP CONSTRAINT "controls_id";
+ALTER TABLE "public"."controls_has_controls_mtm_single" DROP CONSTRAINT "controls_mtm_single_id";
+ALTER TABLE "public"."controls_has_controls_mtm_multiple" DROP CONSTRAINT "controls_id";
+ALTER TABLE "public"."controls_has_controls_mtm_multiple" DROP CONSTRAINT "controls_mtm_multiple_id";
+
+ALTER TABLE "public"."controls_inline" DROP CONSTRAINT "controls_inline_otm_single_id";
+ALTER TABLE "public"."controls_inline" DROP CONSTRAINT "controls_inline_otm_multiple_id";
+ALTER TABLE "public"."controls_inline" DROP CONSTRAINT "controls_id";
+
+ALTER TABLE "public"."controls_inline_has_controls_inline_mtm_single" DROP CONSTRAINT "controls_inline_id";
+ALTER TABLE "public"."controls_inline_has_controls_inline_mtm_single" DROP CONSTRAINT "controls_inline_mtm_single_id";
+ALTER TABLE "public"."controls_inline_has_controls_inline_mtm_multiple" DROP CONSTRAINT "controls_inline_id";
+ALTER TABLE "public"."controls_inline_has_controls_inline_mtm_multiple" DROP CONSTRAINT "controls_inline_mtm_multiple_id";

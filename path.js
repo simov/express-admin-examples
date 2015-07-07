@@ -6,7 +6,7 @@ var fs = require('fs'),
     util = require('util');
 
 ['mysql', 'pg', 'sqlite'].forEach(function (engine) {	
-	var cwd = (process.env.OS.match(/Windows/) !== null)?
+	var cwd = (process.env.OS && process.env.OS.match(/Windows/) !== null)?
 			__dirname.replace(/\\/g, "/"):
 			__dirname;
 	
