@@ -1,23 +1,26 @@
 {
-    "name": "express-admin-examples",
-    "version": "1.0.0",
-    "description": "Examples for Express Admin.",
-    "license"   : "MIT",
-    "homepage"  : "https://github.com/simov/express-admin-examples",
-    "author": {
-        "name"  : "simo",
-        "email" : "simeonvelichkov@gmail.com"
-    },
-    "repository": {
-        "type"  : "git",
-        "url"   : "git://github.com/simov/express-admin-examples.git"
-    },
-    "dependencies": {
-        "express"    : "3.4.4",
-        "moment"     : "*",
-        "cloudinary" : "*"
-    },
-    "scripts": {
-        "postinstall": "node path.js"
-    }
+  "name": "express-admin-examples",
+  "version": "1.0.0",
+  "description": "Examples for Express Admin.",
+  "license": "MIT",
+  "homepage": "https://github.com/simov/express-admin-examples",
+  "author": {
+    "name": "simo",
+    "email": "simeonvelichkov@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/simov/express-admin-examples.git"
+  },
+  "dependencies": {
+    "express": "~3.4.4",
+    "express-admin": "~1.2.6",
+    "moment": "*",
+    "cloudinary": "*",
+    "pg": "*",
+    "util": "*"
+  },
+  "scripts": {
+    "postinstall": "node path.js"
+  }
 }
