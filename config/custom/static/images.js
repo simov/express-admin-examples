@@ -1,11 +1,9 @@
 
 $(function () {
     // show all images inside the ListView
-    $('.x-table tbody tr').each(function (index) {
-        // the image column is second
-        var td =  $('td:eq(1)', this);
+    $('.x-table tbody [type=image]').each(function (index) {
         // get the image url
-        var url = td.text().trim();
+        var url = $(this).text().trim();
 
         // skip on missing url
         if (!url) return;
@@ -13,7 +11,7 @@ $(function () {
         if (!url.match(/^http/)) url = '/upload/' + url;
 
         // add image to this table cell
-        td.html('<img src="'+url+'" style="width:100px" />');
+        $(this).html('<img src="'+url+'" style="width:100px" />');
     });
 
     // show all images inside the EditView
