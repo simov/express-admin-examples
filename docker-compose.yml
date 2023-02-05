@@ -1,0 +1,21 @@
+version: '3.5'
+services:
+  mysql:
+    image: mysql:8
+    container_name: x-admin-mysql
+    volumes:
+      - ./fixtures:/fixtures:ro
+    command: --default-authentication-plugin=mysql_native_password
+    ports:
+      - 8123:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: x-admin
+  pg:
+    image: postgres:15
+    container_name: x-admin-pg
+    volumes:
+      - ./fixtures:/fixtures:ro
+    ports:
+      - 8234:5432
+    environment:
+      POSTGRES_PASSWORD: x-admin

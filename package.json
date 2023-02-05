@@ -1,23 +1,27 @@
 {
-    "name": "express-admin-examples",
-    "version": "1.0.0",
-    "description": "Examples for Express Admin.",
-    "license"   : "MIT",
-    "homepage"  : "https://github.com/simov/express-admin-examples",
-    "author": {
-        "name"  : "simo",
-        "email" : "simeonvelichkov@gmail.com"
-    },
-    "repository": {
-        "type"  : "git",
-        "url"   : "git://github.com/simov/express-admin-examples.git"
-    },
-    "dependencies": {
-        "express"    : "3.4.4",
-        "moment"     : "*",
-        "cloudinary" : "*"
-    },
-    "scripts": {
-        "postinstall": "node path.js"
-    }
+  "name": "express-admin-examples",
+  "version": "1.0.0",
+  "description": "Express Admin Examples",
+  "private": true,
+  "keywords": [],
+  "license": "MIT",
+  "homepage": "https://github.com/simov/express-admin-examples",
+  "author": "Simeon Velichkov <simeonvelichkov@gmail.com> (https://simov.github.io)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/simov/express-admin-examples.git"
+  },
+  "dependencies": {
+    "cloudinary": "^1.33.0",
+    "express": "^4.18.2",
+    "express-admin": "^2.0.0",
+    "moment": "^2.29.4",
+    "mysql": "^2.18.1",
+    "pg": "^8.9.0",
+    "sqlite3": "^5.1.4"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=18.0.0"
+  }
 }

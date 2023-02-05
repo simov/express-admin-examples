@@ -1,70 +1,74 @@
 
 # Express Admin Examples
 
-This is the examples repository for [Express Admin][1]
+> _Examples for [Express Admin]_
 
-Other locations:
-- [Introductory Screencast][2]
-- [Documentation][3]
-- [System Tests][4]
+## Environment
 
-## Install
+- node >= 14
+- npm
+- docker
+- docker-compose
+
+## MySQL
+
 ```bash
-$ git clone https://github.com/simov/express-admin-examples
-$ cd express-admin-examples
-$ npm install
+# start MySQL database server
+docker-compose up mysql
+# login to the running container
+docker exec -it x-admin-mysql bash
+# login to mysql
+mysql -u root -p
 ```
-
-## Create the schema and the test user
-###### MySQL
 ```sql
-CREATE SCHEMA `express-admin-examples` ;
-CREATE USER liolio@localhost IDENTIFIED BY 'karamba' ;
-GRANT ALL ON `express-admin-examples`.* TO liolio@localhost ;
+-- create database
+create schema `x-admin-examples` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
 ```
-###### PostgreSQL
+```bash
+# import schema
+mysql -p --user=root 'x-admin-examples' < fixtures/mysql/schema.sql
+mysql -p --user=root 'x-admin-examples' < fixtures/mysql/insert.sql
+```
+
+## PostgreSQL
+
+```bash
+# start PostgreSQL database server
+docker-compose up mysql
+# login to the running container
+docker exec -it x-admin-pg bash
+# login to psql
+psql -U postgres
+```
 ```sql
-create database "express-admin-examples";
--- create schema 'name'; (default: 'public')
-create user liolio with password 'karamba';
-grant all on database "express-admin-examples" to liolio;
--- public schema by default
-grant all on schema "public" to liolio;
-grant all on all tables in schema "public" to liolio;
-grant all on all sequences in schema "public" to liolio;
+# create database
+create database "x-admin-examples";
+```
+```bash
+# import schema
+psql -U postgres 'x-admin-examples' < fixtures/pg/schema.sql
+psql -U postgres 'x-admin-examples' < fixtures/pg/insert.sql
 ```
 
-
-## Import the schema and the test data
+## SQLite
 
 ```bash
-# MySQL
-$ mysql -p --user=root 'express-admin-examples' < fixtures/mysql/schema.sql
-$ mysql -p --user=root 'express-admin-examples' < fixtures/mysql/insert.sql
-# PostgreSQL
-$ sudo -u postgres psql 'express-admin-examples' < fixtures/pg/schema.sql
-$ sudo -u postgres psql 'express-admin-examples' < fixtures/pg/insert.sql
-# SQLite
-$ node fixtures/sqlite/import.js
+# create database and import schema
+node fixtures/sqlite-import.js
 ```
-For SQLite you need to change the path to the database inside `config/sqlite/config.json`
 
-## Run the Admin
+## Examples
+
 ```bash
-# MySQL
-$ admin config/mysql/
-# PostgreSQL
-$ admin config/pg/
-# SQLite
-$ admin config/sqlite/
+# install test dependencies
+npm install
+# update absolute paths set inside the config folder
+node path.js
+# start the admin
+node start.js mysql # or pg, sqlite
 ```
 
-## Navigate to `http://localhost:3000`
-Username: **admin**
-Password: **11aaAA**
+Navigate to http://localhost:3000 user `admin` pass `1234abCD`
 
 
-  [1]: https://github.com/simov/express-admin
-  [2]: http://www.youtube.com/watch?v=1CdoCB96QNk
-  [3]: http://simov.github.io/express-admin-site
-  [4]: https://github.com/simov/express-admin-tests
+  [Express Admin]: https://github.com/simov/express-admin

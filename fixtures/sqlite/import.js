@@ -1,19 +1,21 @@
 
-var fs = require('fs'),
-    path = require('path');
+var fs = require('fs')
+var path = require('path')
+var sqlite3 = require('sqlite3').verbose()
 
-if (fs.existsSync(path.join(__dirname,'db.sqlite')))
-    fs.unlinkSync(path.join(__dirname,'db.sqlite'));
+var db = path.join(__dirname, 'x-admin-examples.sqlite')
+var schema = fs.readFileSync(path.join(__dirname, 'schema.sql'), 'utf8')
+var insert = fs.readFileSync(path.join(__dirname, 'insert.sql'), 'utf8')
 
-var sqlite3 = require('sqlite3').verbose();
-var db = new sqlite3.Database(path.join(__dirname,'db.sqlite'));
+if (fs.existsSync(db)) {
+  fs.unlinkSync(db)
+}
 
-var schema = fs.readFileSync(path.join(__dirname,'schema.sql'), 'utf8');
-var insert = fs.readFileSync(path.join(__dirname,'insert.sql'), 'utf8');
+var connection = new sqlite3.Database(db)
 
-db.serialize(function() {
-    db.exec(schema);
-    db.exec(insert);
-});
+connection.serialize(() => {
+  connection.exec(schema)
+  connection.exec(insert)
+})
 
-db.close();
+connection.close()

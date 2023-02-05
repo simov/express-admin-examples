@@ -1,6 +1,6 @@
 
-DROP SCHEMA IF EXISTS "express-admin-examples" ;
-CREATE SCHEMA IF NOT EXISTS "express-admin-examples";
+DROP SCHEMA IF EXISTS "x-admin-examples" ;
+CREATE SCHEMA IF NOT EXISTS "x-admin-examples";
 
 
 ALTER TABLE "purchase" DROP CONSTRAINT "item_id";

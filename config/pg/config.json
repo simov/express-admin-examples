@@ -1,15 +1,11 @@
 {
-    "pg": {
-        "database": "express-admin-examples",
-        "user": "liolio",
-        "password": "karamba"
-    },
-    "server": {
-        "port": 3000
-    },
-    "app": {
-        "layouts": true,
-        "themes": true,
-        "languages": true
-    }
+  "pg": {
+    "database": "x-admin-examples",
+    "user": "postgres",
+    "password": "x-admin",
+    "port": 8234
+  },
+  "admin": {
+    "settings": "/home/s/git/express-admin-examples/config/pg/settings.json"
+  }
 }
