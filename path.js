@@ -4,11 +4,9 @@ var path = require('path')
 
 ;[
   'config/mysql/config.json',
-  'config/mysql/custom.json',
   'config/pg/config.json',
-  'config/pg/custom.json',
   'config/sqlite/config.json',
-  'config/sqlite/custom.json',
+  'config/custom.json',
 ].forEach((file) => {
   var fpath = path.resolve(__dirname, file)
   fs.writeFileSync(

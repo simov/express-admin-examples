@@ -1,6 +1,12 @@
 
-<section id="my-custom-view">
-  <h4>I'm styled through custom global stylesheet</h4>
+<h1>Global Static Files</h1>
 
-  <p>Here we have a custom view that have <code>css</code> and <code>js</code> files declared inside the <code>custom.json</code> file. These makes the files global for the admin because they are included inside the <code>head</code> tag of the document. You can inspect this page and see for yourself.</p>
-</section>
+<p class="lead">Static files referenced inside the <code>custom</code> configuration</p>
+
+<blockquote>
+  <p>Static <code>css</code> and <code>js</code> files defined in your <code>custom</code> configuration will be included inside the <code>&lt;head&gt;</code> tag of the page. They will be loaded always, even on views that do not need them.</p>
+</blockquote>
+
+<div id="global-static-files">
+  <p>I'm styled through custom global <code>css</code> file.</p>
+</div>

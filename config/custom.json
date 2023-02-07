@@ -1,40 +1,19 @@
 {
-  "editors": {
-    "app": {
-      "path": "/home/s/git/express-admin-examples/custom/editors/app.js",
-      "slug": "upload"
-    },
-    "public": {
-      "external": {
-        "js": [
-          "//cdn.ckeditor.com/4.4.2/standard/ckeditor.js"
-        ]
-      },
-      "local": {
-        "path": "/home/s/git/express-admin-examples/custom/editors",
-        "js": [
-          "/jslib/tinymce/js/tinymce/tinymce.min.js",
-          "/jslib/tinymce/js/tinymce/jquery.tinymce.min.js",
-          "/editors.js"
-        ]
-      }
-    }
-  },
-  "view1": {
+  "Custom View - Basics": {
     "app": {
       "path": "/home/s/git/express-admin-examples/custom/app1/app.js",
       "slug": "view1",
-      "verbose": "Simple",
+      "verbose": "Hello Custom View",
       "mainview": {
         "show": true
       }
     }
   },
-  "view2": {
+  "Custom View - Global Static Files": {
     "app": {
       "path"  : "/home/s/git/express-admin-examples/custom/app2/app.js",
       "slug": "view2",
-      "verbose": "Custom global static files",
+      "verbose": "Custom Global Static Files",
       "mainview": {
         "show": true
       }
@@ -51,11 +30,11 @@
       }
     }
   },
-  "view3": {
+  "Custom View - Local Static Files": {
     "app": {
       "path"  : "/home/s/git/express-admin-examples/custom/app3/app.js",
       "slug": "view3",
-      "verbose": "Custom local static files",
+      "verbose": "Custom Local Static Files",
       "mainview": {
         "show": true
       }
@@ -66,7 +45,7 @@
       }
     }
   },
-  "view4": {
+  "Custom View - Breadcrumbs": {
     "app": {
       "path"  : "/home/s/git/express-admin-examples/custom/app4/app.js",
       "slug": "view4",
@@ -76,17 +55,37 @@
       }
     }
   },
-  "stats": {
+  "Custom View - Highcharts": {
     "app": {
       "path"  : "/home/s/git/express-admin-examples/custom/highcharts/app.js",
       "slug": "stats",
-      "verbose": "Highcharts Statistics",
+      "verbose": "Highcharts",
       "mainview": {
         "show": true
       }
     }
   },
-  "static": {
+  "Custom Component - Text Editors + Backend": {
+    "app": {
+      "path": "/home/s/git/express-admin-examples/custom/editors/app.js",
+      "slug": "upload"
+    },
+    "public": {
+      "external": {
+        "js": [
+          "https://cdn.ckeditor.com/4.4.2/standard/ckeditor.js",
+          "https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js"
+        ]
+      },
+      "local": {
+        "path": "/home/s/git/express-admin-examples/custom/editors",
+        "js": [
+          "/editors.js"
+        ]
+      }
+    }
+  },
+  "Custom Static Files": {
     "public": {
       "local": {
         "path": "/home/s/git/express-admin-examples/custom/static",
@@ -99,7 +98,7 @@
       }
     }
   },
-  "events": {
+  "Event Hooks": {
     "events": "/home/s/git/express-admin-examples/custom/events/events.js"
   }
 }

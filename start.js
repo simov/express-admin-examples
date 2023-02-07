@@ -13,7 +13,7 @@ express()
   .use(admin({
     config: require(`./config/${name}/config.json`),
     settings: require(`./config/${name}/settings.json`),
-    custom: require(`./config/${name}/custom.json`),
-    users: require(`./config/${name}/users.json`),
+    users: require(`./config/users.json`),
+    custom: require(`./config/custom.json`),
   }))
   .listen(3000)

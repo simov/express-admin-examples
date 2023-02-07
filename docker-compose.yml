@@ -10,9 +10,37 @@ services:
       - 8123:3306
     environment:
       MYSQL_ROOT_PASSWORD: x-admin
+  mysql5:
+    image: mysql:5
+    container_name: x-admin-mysql-5
+    volumes:
+      - ./fixtures:/fixtures:ro
+    command: --default-authentication-plugin=mysql_native_password
+    ports:
+      - 8123:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: x-admin
+  mariadb:
+    image: mariadb:10.10
+    container_name: x-admin-mariadb
+    volumes:
+      - ./fixtures:/fixtures:ro
+    ports:
+      - 8123:3306
+    environment:
+      MARIADB_ROOT_PASSWORD: x-admin
   pg:
     image: postgres:15
     container_name: x-admin-pg
+    volumes:
+      - ./fixtures:/fixtures:ro
+    ports:
+      - 8234:5432
+    environment:
+      POSTGRES_PASSWORD: x-admin
+  pg9:
+    image: postgres:9.3
+    container_name: x-admin-pg-9
     volumes:
       - ./fixtures:/fixtures:ro
     ports:

@@ -52,10 +52,16 @@ app.post(/\/stats(?:\/(\w+))?/, (req, res, next) => {
 app.all(/\/stats(?:\/(\w+))?/, (req, res, next) => {
   var relative = path.relative(res.locals._admin.views, app.get('views'))
 
-  res.locals.breadcrumbs = {
+  res.locals.breadcrumbs = req.params[0] ? {
     links: [
       {url: '/', text: res.locals.string.home},
-      {active: true, text: 'Statistics'}
+      {url: '/stats', text: 'Stats'},
+      {active: true, text: req.params[0]}
+    ]
+  } : {
+    links: [
+      {url: '/', text: res.locals.string.home},
+      {active: true, text: 'Stats'}
     ]
   }
   

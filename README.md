@@ -13,10 +13,14 @@
 ## MySQL
 
 ```bash
-# start MySQL database server
+# start MySQL database server (pick one)
 docker-compose up mysql
-# login to the running container
+docker-compose up mysql5
+docker-compose up mariadb
+# login to the running container (pick one)
 docker exec -it x-admin-mysql bash
+docker exec -it x-admin-mysql-5 bash
+docker exec -it x-admin-mariadb bash
 # login to mysql
 mysql -u root -p
 ```
@@ -33,10 +37,12 @@ mysql -p --user=root 'x-admin-examples' < fixtures/mysql/insert.sql
 ## PostgreSQL
 
 ```bash
-# start PostgreSQL database server
-docker-compose up mysql
-# login to the running container
+# start PostgreSQL database server (pick one)
+docker-compose up pg
+docker-compose up pg9
+# login to the running container (pick one)
 docker exec -it x-admin-pg bash
+docker exec -it x-admin-pg-9 bash
 # login to psql
 psql -U postgres
 ```
@@ -70,5 +76,11 @@ node start.js mysql # or pg, sqlite
 
 Navigate to http://localhost:3000 user `admin` pass `1234abCD`
 
+## Diagrams
+
+[MySQL Workbench] can be used to preview the [database diagrams].
+
 
   [Express Admin]: https://github.com/simov/express-admin
+  [MySQL Workbench]: https://www.mysql.com/products/workbench/
+  [database diagrams]: https://github.com/simov/express-admin-examples/blob/master/fixtures/x-admin-examples.mwb
